@@ -37,7 +37,7 @@
         <div class="page-mask">
             <div class="page-loader">
                 <div class="spinner"></div>
-                Loading...
+                Cargando...
             </div>
         </div>
         <!-- Wrap -->
@@ -96,25 +96,27 @@
                                 <li>
                                     <a id="current" href="#">
                                     Inicio
-                                    </a>
-                                    
+                                    </a> 
                                 </li>
                                 <li>
-                                    <a id="" href="#">
+                                    <a id="" href="#Servicio">
                                     Servicios
                                     </a>
                                 </li>
                                 <li>
-                                    <a id="" href="#">
-                                    Contacto
-                                    </a>
-                                    
-                                </li>
-                                <li>
-                                    <a id="" href="#">
+                                    <a id="" href="#Nosotros">
                                     Nosotros
                                     </a>
-                                    
+                                </li>
+                                <li>
+                                    <a id="" href="#Testimonio">
+                                    Testimonio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="" href="#Alcance">
+                                    Alcance
+                                    </a>
                                 </li>
                             </ul>
                         </nav>
@@ -142,12 +144,12 @@
                 </div>
                 <!-- Slider --> 
                 <!-- Title, Service -->
-                <div class="breadcrumb-wrapper">
+                <div class="breadcrumb-wrapper" >
                     <div class="pattern-overlay">
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
-                                    <h2 class="title">Servicios</h2>
+                                <div id="Servicio" name="Servicio" class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                                    <h2 class="title" >Servicios</h2>
                                 </div>
                                 
                             </div>
@@ -239,7 +241,7 @@
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12 wow fadeInRight">
                                     <div class="app-service padding-bottom50">
-                                        <h2 class="light">Servicios Generales</h2>
+                                        <h2 id="Nosotros" name="Nosotros" class="light">Nosotros</h2>
                                         <h4>Titulo</h4>
                                         <p>Blablabla
                                         </p>
@@ -259,7 +261,7 @@
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="text-center">
-                                    <h2 class="wow fadeIn">Que dicen sobre nosotros</h2>
+                                    <h2 id="Testimonio" name="Testimonio" class="wow fadeIn">Testimonio</h2>
                                     <h4 class="wow fadeInRight">Al rededor de la comuna tenemos muchos profesores como usuarios, de los que recibimos sus comentarios para mejorar</h4>
                                 </div>
                             </div>
@@ -343,7 +345,7 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="padding-top60 text-center">
-                                        <h2 class="light wow fadeIn">Some Random Facts</h2>
+                                        <h2 id="Alcance" name="Alcance" class="light wow fadeIn">Alcance</h2>
                                         <h4 class="light wow fadeInRight">
                                             Find what is going around us. You can see some real stats here!
                                         </h4>
@@ -438,20 +440,20 @@
                                     <fieldset>
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <input class="form-control" id="username" name="username" type="text" placeholder="Username" value="" required>
+                                                <input class="form-control" id="username" name="username" type="text" placeholder="Usuario" value="" required>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <input class="form-control" type="email" id="email" name="email" placeholder="Email" value="" required>
+                                                <input class="form-control" type="password" id="contrasenia" name="contrasenia" placeholder="Contraseña" value="" required>
                                             </div>
                                         </div>
                                     </fieldset>
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="password-recovery.html" class="pull-left">(Lost Password?)</a>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-color">Login</button>
+                                    <a href="password-recovery.html" class="pull-left">¿Perdio su contraseña?</a>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-color">Iniciar Sesión</button>
                                 </div>
                             </form>
                         </div>
