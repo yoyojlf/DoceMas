@@ -1,0 +1,93 @@
+ /*Green Color #59ab02 & #82dc23 */
+ 
+.btn:focus, .subscribe-btn, .progress .progress-bar, .accordionMod .panel-heading .current, #current:after, .tp-leftarrow.default:hover, .tp-rightarrow.default:hover, .contact-box:hover, .ch-info-wrap, .ch-info .ch-info-back, .content-box-about .ch-info-front, figure.effect-zoe figcaption, h2.form-signin-heading, a.prev,a.next, a.prev,a.next {
+    background: #59ab02;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus, .pager li > a:hover, .pager li > a:focus, .navbar-toggle i, .cn-wrapper li a, .cn-wrapper:after, #not-found i, #options li a.selected {
+    background-color: #59ab02;
+    color: #fff;
+}
+
+.spinner {
+    border-top-color: #59ab02;
+}
+
+.hero {
+    border-left-color: #59ab02;
+}
+
+#options li a.selected {
+	border: 1px solid #59ab02;
+}
+
+.ie8 .btn-color, .ie9 .btn-color {
+	background: #59ab02 !important;
+}
+
+.ie8 .btn-color:hover, .ie9 .btn-color:hover {
+	background: #59ab02 !important;
+}
+
+.btn-color:hover {
+    color: #fff !important;
+    background-color: #82dc23 !important;
+    border-color: #82dc23 !important;
+}
+
+.sidebar-nav li.active:hover {
+    background-color: #82dc23 !important;
+}
+
+.btn-color {
+
+    color: #fff !important;
+	background-color: #59ab02 !important;
+    border-color: #59ab02 !important;
+}
+
+#current,.menu ul li a:hover,.menu ul>li:hover>a, h2.form-signin-heading {
+	border-bottom: 3px solid #59ab02;
+}
+
+ul.why li:before {
+    background: #59ab02;
+}
+
+.menu ul ul {
+	border-top: 3px solid #59ab02;
+}
+
+#horizontal-tabs ul.tabs li.current {
+    border-top: 2px solid #59ab02;
+}
+
+#vertical-tabs ul.tabs li.current {
+    border-left: 2px solid #59ab02;
+}
+
+.author-content, div.content-box.big, #cn-tabs .service, .comment-des, .contact-box {
+
+}
+
+a, .post-item h4 a:hover, .cn-wrapper li a:hover, .cn-wrapper li a.active, .color, ul.list.icons li i, #current, #current span, .menu ul > li > a:hover, .menu ul > li > a:hover span, #not-found h2, .bx-wrapper .bx-controls-direction a i, .pagination > li > a, .pagination > li > span, .phone-login a:hover, .price, .random-box-icon {
+    color: #59ab02;
+}
+
+.testimonial p, blockquote {
+	border-left: 5px solid #59ab02;
+    border-right: 5px solid #59ab02;
+}
+
+.pricing_plan h3, .pricing_plan.special h3, .sidebar-nav li.active, .sidebar-nav li:hover, .btn.btn-shopping-cart .fa {
+    background-color: #59ab02;
+}
+
+.pattern-overlay {
+    background-color: rgba(89, 171, 2, 0.75);
+}
+
+
+.subscribe-btn {
+    background: #82dc23 !important;
+}

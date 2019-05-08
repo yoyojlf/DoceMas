@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset="utf-8">
+        <title>DoceMas</title>
+
+        {% load static %}
+
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Google Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,700,800,900' rel='stylesheet' type='text/css'>
+        <!-- Library CSS -->
+        <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+        <link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
+        <link rel="stylesheet" href="{% static "css/fonts/font-awesome/css/font-awesome.css" %}">
+        <link rel="stylesheet" href="{% static "css/animations.css" %}" media="screen">
+        <link rel="stylesheet" href="{% static "css/superfish.css" %}" media="screen">
+        <link rel="stylesheet" href="{% static "css/revolution-slider/css/settings.css" %}" media="screen">
+        <link rel="stylesheet" href="{% static "css/revolution-slider/css/extralayers.css" %}" media="screen">
+        <link rel="stylesheet" href="{% static "css/prettyPhoto.css" %}" media="screen">
+        <!-- Theme CSS -->
+        <link rel="stylesheet" href="{% static "css/style.css" %}">
+        <!-- Skin -->
+        <link rel="stylesheet" href="{% static "css/colors/green.css" %}" class="colors">
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="{% static "css/theme-responsive.css" %}">
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="{% static "img/ico/favicon.ico" %}">
+        <link rel="apple-touch-icon" href="{% static "img/ico/apple-touch-icon.png" %}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static "img/ico/apple-touch-icon-72.png" %}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static "img/ico/apple-touch-icon-114.png" %}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{% static "img/ico/apple-touch-icon-144.png" %}">
+    </head>
+    <body class="home">
+        <div class="page-mask">
+            <div class="page-loader">
+                <div class="spinner"></div>
+                Loading...
+            </div>
+        </div>
+        <!-- Wrap -->
+        <div class="wrap">
+            <!-- Header -->
+            <header id="header">
+                <!-- Header Top Bar -->
+                <div class="top-bar">
+                    <div class="slidedown collapse">
+                        <div class="container">
+                            <div class="pull-left">
+                                <ul class="social pull-left">
+                                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="phone-login pull-right">
+                                <a><i class="fa fa-phone"></i> Telefono : +56 22 555 7859</a>
+                                <a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in"></i> Iniciar Sesión</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Header Top Bar -->
+                <!-- Main Header -->
+                <div class="main-header">
+                    <div class="container">
+                        <!-- TopNav -->
+                        <div class="topnav navbar-header">
+                            <a class="navbar-toggle down-button" data-toggle="collapse" data-target=".slidedown">
+                            <i class="fa fa-angle-down icon-current"></i>
+                            </a> 
+                        </div>
+                        <!-- /TopNav-->
+                        <!-- Logo -->
+                        <div class="logo pull-left">
+                            <h1>
+                                <a href="index.html">
+                                <img class="" src="{% static "img/carrusel/logodocemas.png" %}" alt="DoceMas" width="160" height="60">
+                                </a>
+                            </h1>
+                        </div>
+                        <!-- /Logo -->
+                        <!-- Mobile Menu -->
+                        <div class="mobile navbar-header">
+                            <a class="navbar-toggle" data-toggle="collapse" href=".navbar-collapse">
+                            <i class="fa fa-bars fa-2x"></i>
+                            </a> 
+                        </div>
+                        <!-- /Mobile Menu -->
+                        <!-- Menu Start -->
+                        <nav class="collapse navbar-collapse menu">
+                            <ul class="nav navbar-nav sf-menu">
+                                <li>
+                                    <a id="current" href="#">
+                                    Inicio
+                                    </a>
+                                    
+                                </li>
+                                <li>
+                                    <a id="" href="#">
+                                    Servicios
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="" href="#">
+                                    Contacto
+                                    </a>
+                                    
+                                </li>
+                                <li>
+                                    <a id="" href="#">
+                                    Nosotros
+                                    </a>
+                                    
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- /Menu --> 
+                    </div>
+                </div>
+                <!-- /Main Header -->
+            </header>
+            <!-- /Header --> 
+            <!-- Main Section -->
+            <section id="main">
+                <!-- Slider -->
+                <div class="fullwidthbanner-container tp-banner-container">
+                    <div class="fullwidthbanner rslider tp-banner">
+                        <ul>
+                            <li data-transition="fade" data-slotamount="7" data-masterspeed="2000" data-thumb="homeslider_thumb2.jpg" data-delay="10000"  data-saveperformance="on">
+                                <img src="{% static "img/carrusel/profe1.jpg" %}"  alt="Profe 1" data-bgposition="right top" data-kenburns="on" data-duration="12000" data-ease="Power0.easeInOut" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center bottom">
+                                
+                            </li>
+                            <li data-transition="fade" data-slotamount="1" data-masterspeed="300">
+                                <img src="{% static "img/carrusel/profe3.jpg" %}" data-fullwidthcentering="on" alt="Profe 3"> 
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Slider --> 
+                <!-- Title, Service -->
+                <div class="breadcrumb-wrapper">
+                    <div class="pattern-overlay">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                                    <h2 class="title">Servicios</h2>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Title, Service -->
+                <!-- Main Content -->
+                <div class="main-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 wow fadeIn">
+                                <div class="content-box big ch-item bottom-pad-small">
+                                    <div class="ch-info-wrap">
+                                        <div class="ch-info">
+                                            <div class="ch-info-front ch-img-1"><i class="fa fa-rocket"></i></div>
+                                            <div class="ch-info-back">
+                                                <i class="fa fa-rocket"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-box-info">
+                                        <h3>Capacitaciones</h3>
+                                        <p>
+                                            Se notificará a los usuarios las capacitaciones disponibles de nuestras OTEC asociadas.
+                                        </p>
+                                    </div>
+                                    <div class="border-bottom margin-top30">
+                                    </div>
+                                    <div class="border-bottom">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 wow fadeIn">
+                                <div class="content-box big ch-item bottom-pad-small">
+                                    <div class="ch-info-wrap">
+                                        <div class="ch-info">
+                                            <div class="ch-info-front ch-img-1"><i class="fa fa-check"></i></div>
+                                            <div class="ch-info-back">
+                                                <i class="fa fa-check"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-box-info">
+                                        <h3>Foro</h3>
+                                        <p>
+                                            Contará con un foro entre profesores para poder responder sus dudas entre ellos.
+                                        </p>
+                                    </div>
+                                    <div class="border-bottom margin-top30">
+                                    </div>
+                                    <div class="border-bottom">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 wow fadeIn">
+                                <div class="content-box big ch-item">
+                                    <div class="ch-info-wrap">
+                                        <div class="ch-info">
+                                            <div class="ch-info-front ch-img-1"><i class="fa fa-briefcase"></i></div>
+                                            <div class="ch-info-back">
+                                                <i class="fa fa-briefcase"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-box-info">
+                                        <h3>Material Didactico</h3>
+                                        <p>
+                                            Podrá compartir y utilizar el material didatico compartido por los docentes de la plataforma.
+                                        </p>
+                                    </div>
+                                    <div class="border-bottom margin-top30">
+                                    </div>
+                                    <div class="border-bottom">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Main Content -->
+                <!-- Product Content -->
+                <div class="product-lead bottom-pad margin-top100">
+                    <div class="pattern-overlay">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12 col-xs-12 text-center wow fadeInLeft">
+                                    <img class="" src="{% static "img/carrusel/material.jpg" %}" alt="iPhone5c">
+                                </div>
+                                <div class="col-md-6 col-sm-12 col-xs-12 wow fadeInRight">
+                                    <div class="app-service padding-bottom50">
+                                        <h2 class="light">Servicios Generales</h2>
+                                        <h4>Titulo</h4>
+                                        <p>Blablabla
+                                        </p>
+                                        <div class="divider"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Product Content --> 
+                
+                
+                <!-- Testimonials --> 
+                <div id="testimonials" class="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="text-center">
+                                    <h2 class="wow fadeIn">Que dicen sobre nosotros</h2>
+                                    <h4 class="wow fadeInRight">Al rededor de la comuna tenemos muchos profesores como usuarios, de los que recibimos sus comentarios para mejorar</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 wow fadeInRight">
+                                <!-- Testimonials Widget -->
+                                <div class="row margin-top25">
+                                    <div class="testimonials widget">
+                                        <div class="clearfix"></div>
+                                        <div id="testimonials-carousel" class="testimonials-carousel carousel slide">
+                                            <div class="carousel-inner">
+                                                <div class="item active">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="testimonial item">
+                                                            <p>
+                                                                DoceMas me cambió la vida, mejoró la forma de comunicarme con otros docentes como yo, con los que podemos compartir nuestro material y recibir feedback.
+                                                            </p>
+                                                            <div class="testimonials-arrow"></div>
+                                                            <div class="author">
+                                                                <div class="testimonial-image ">
+                                                                    <img alt="" src="img/testimonial/team-member-1.jpg">
+                                                                </div>
+                                                                <div class="testimonial-author-info">
+                                                                    <a href="#"><span class="color">Monica Perez</span></a> Profesora de Leguaje y Comunicación
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="testimonial item">
+                                                            <p>
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quas animi placeat consequatur dicta repudiandae voluptatum ut, iusto qui. Natus suscipit nemo officiis quo dignissimos laudantium, deleniti expedita eveniet. Expedita?
+                                                            </p>
+                                                            <div class="testimonials-arrow"></div>
+                                                            <div class="author">
+                                                                <div class="testimonial-image ">
+                                                                    <img alt="" src="img/testimonial/team-member-2.jpg">
+                                                                </div>
+                                                                <div class="testimonial-author-info">
+                                                                    <a href="#"><span class="color">Monzurul Haque</span></a> FIFO Themes
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="testimonial item">
+                                                            <p>
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam ducimus eaque blanditiis quas! Error nam ad facilis mollitia cum aliquid, optio voluptates a doloremque, earum tempore iste! Autem, vel, ipsam.
+                                                            </p>
+                                                            <div class="testimonials-arrow"></div>
+                                                            <div class="author">
+                                                                <div class="testimonial-image ">
+                                                                    <img alt="" src="img/testimonial/team-member-3.jpg">
+                                                                </div>
+                                                                <div class="testimonial-author-info">
+                                                                    <a href="#"><span class="color">Carol Johansen</span></a> FIFO Themes
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Testimonials Widget -->                            
+                        </div>
+                    </div>
+                </div>
+                <!-- /Testimonials -->
+                <!-- Random Facts -->
+                <div id="random-facts" class=" margin-top70">
+                    <div class="pattern-overlay">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="padding-top60 text-center">
+                                        <h2 class="light wow fadeIn">Some Random Facts</h2>
+                                        <h4 class="light wow fadeInRight">
+                                            Find what is going around us. You can see some real stats here!
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeIn">
+                                    <div class="random-box padding-top30 padding-bottom40">
+                                        <div class="random-box-icon">
+                                            <i class="fa fa-coffee"></i>
+                                        </div>
+                                        <div class="random-box-info">
+                                            <span class="facts" data-from="0" data-to="101" data-speed="5000" data-refresh-interval="50"></span>
+                                            <p>
+                                                COLEGIOS
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeIn">
+                                    <div class="random-box padding-top30 padding-bottom40">
+                                        <div class="random-box-icon">
+                                            <i class="fa fa-briefcase"></i>
+                                        </div>
+                                        <div class="random-box-info">
+                                            <span class="facts" data-from="0" data-to="299" data-speed="5000" data-refresh-interval="50"></span>
+                                            <p>
+                                                APORTES
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeIn">
+                                    <div class="random-box padding-top30 padding-bottom40">
+                                        <div class="random-box-icon">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                        <div class="random-box-info">
+                                            <span class="facts" data-from="0" data-to="175" data-speed="5000" data-refresh-interval="50"></span>
+                                            <p>
+                                                PROFESORES
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeIn">
+                                    <div class="random-box padding-top30 padding-bottom40">
+                                        <div class="random-box-icon">
+                                            <i class="fa fa-gift"></i>
+                                        </div>
+                                        <div class="random-box-info">
+                                            <span class="facts" data-from="0" data-to="50" data-speed="5000" data-refresh-interval="50"></span>
+                                            <p>
+                                                OTEC
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Random Facts -->
+                
+                                                                      
+                 
+            </section>
+            <!-- /Main Section -->
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 ">
+                                <p class="credits">&copy; Copyright 2018 by <a href="#">Franco Alvarado</a>. Todos los derechos reservados. </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            <!-- Modal -->
+            <section id="modals">
+                <!-- Login Modal -->
+                <div class="modal login fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="form-signin-heading modal-title" id="myModalLabel">Login</h2>
+                            </div>
+                            <form method="post" id="login">
+                                <div class="modal-body">
+                                    <fieldset>
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <input class="form-control" id="username" name="username" type="text" placeholder="Username" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <input class="form-control" type="email" id="email" name="email" placeholder="Email" value="" required>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="password-recovery.html" class="pull-left">(Lost Password?)</a>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-color">Login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Logan Modal -->
+                <!-- Registration Modal -->
+                <div class="modal register fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h2 class="form-signin-heading modal-title" id="registrationModalLabel">Create a new account</h2>
+                        </div>
+                        <form method="post" id="registration">
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <input type="text" value="" class="form-control" placeholder="First Name">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" value="" class="form-control" placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <input type="text" value="" class="form-control" placeholder="E-mail Address">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <input type="password" value="" class="form-control" placeholder="Password">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="password" value="" class="form-control" placeholder="Re-enter Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-color">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Registration Modal -->
+            </section>
+            <!-- Scroll To Top --> 
+            <a href="#" class="scrollup"><i class="fa fa-angle-up" %}"></i></a>
+        </div>
+        <!-- /Wrap -->
+        <!-- The Scripts -->
+        <script src="{% static "js/jquery.min.js" %}"></script>
+        <script src="{% static "js/jquery-migrate-1.0.0.js" %}"></script>
+        <script src="{% static "js/jquery-ui.js" %}"></script>
+        <script src="{% static "js/bootstrap.js" %}"></script>
+        <script src="{% static "js/revolution-slider/js/jquery.themepunch.plugins.min.js" %}"></script> 
+        <script src="{% static "js/revolution-slider/js/jquery.themepunch.revolution.min.js" %}"></script>
+        <script src="{% static "js/jquery.parallax.js" %}"></script>
+        <script src="{% static "js/jquery.wait.js" %}"></script>
+        <script src="{% static "js/fappear.js" %}"></script> 
+        <script src="{% static "js/modernizr-2.6.2.min.js" %}"></script>
+        <script src="{% static "js/jquery.bxslider.min.js" %}"></script>
+        <script src="{% static "js/jquery.prettyPhoto.js" %}"></script>
+        <script src="{% static "js/superfish.js" %}"></script>
+        <script src="{% static "js/tweetMachine.js" %}"></script>
+        <script src="{% static "js/tytabs.js" %}"></script>
+        <script src="{% static "js/jquery.gmap.min.js" %}"></script>
+        <script src="{% static "js/jquery.sticky.js" %}"></script>
+        <script src="{% static "js/jquery.countTo.js" %}"></script>
+        <script src="{% static "js/jflickrfeed.js" %}"></script>
+        <script src="{% static "js/imagesloaded.pkgd.min.js" %}"></script>
+        <script src="{% static "js/waypoints.min.js" %}"></script>
+        <script src="{% static "js/wow.js" %}"></script>
+        <script src="{% static "js/jquery.fitvids.js" %}"></script>
+        <script src="{% static "js/custom.js" %}"></script>
+    </body>
+</html>
+
