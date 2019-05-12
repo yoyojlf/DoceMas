@@ -10,4 +10,5 @@ urlpatterns = [
     path('asig',views.asig, name = "asig"),
     path('nivel',views.nivel, name = "nivel"),
     path('usuario',views.usuario, name = "usuario"),
+    path('otec',views.otec, name = "otec"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

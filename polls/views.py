@@ -19,3 +19,6 @@ def nivel(request):
 
 def usuario(request):
     return render(request,'mant_usuario.html')
+
+def otec(request):
+    return render(request,'mant_otec.html')
