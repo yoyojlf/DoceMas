@@ -7,3 +7,15 @@ def index(request):
 
 def admin(request):
     return render(request,'admin.html')
+
+def colegio(request):
+    return render(request,'mant_colegio.html')
+
+def asig(request):
+    return render(request,'mant_asignatura.html')
+    
+def nivel(request):
+    return render(request,'mant_nivel.html')
+
+def usuario(request):
+    return render(request,'mant_usuario.html')
