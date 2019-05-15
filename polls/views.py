@@ -52,6 +52,39 @@ def add_colegio(request):
         } 
         return JsonResponse(data)
 
+def edit_colegio(request, id):
+    
+    try:
+        #Recepción de datos
+        nom = request.POST.get('nombre','')
+        direccion = request.POST.get('direccion','')
+        correo = request.POST.get('correo','')
+        tel = request.POST.get('telefono','')
+
+        #Obtiene Objeto que se actualizará
+        col = Colegio.objects.get(pk=id)
+
+        #Actualiza objeto con datos recibidos
+        col.nombre = nom
+        col.direccion = direccion                                                                                                                                                                                                        
+        col.correo = correo
+        col.telefono = tel
+        col.save() 
+
+        data = { 
+            'mensaje': 'Los datos fueron editados correctamente.', 
+            'type' : 'success', 
+            'tittle': 'Editar Colegio' 
+        } 
+        return JsonResponse(data)
+    except:
+        data = { 
+            'mensaje': 'Error al editar los datos.', 
+            'type' : 'success', 
+            'tittle': 'Editar Colegio' 
+        } 
+        return JsonResponse(data)
+
 def asig(request):
     return render(request,'mant_asignatura.html', {'asignaturas':Asignatura.objects.all()} )
 
@@ -87,6 +120,35 @@ def add_asig(request):
             'tittle': 'Registro Asignatura' 
         } 
         return JsonResponse(data)
+
+def edit_asig(request, id):
+    
+    try:
+        #Recepción de datos
+        nom = request.POST.get('nombre','')
+        descrip = request.POST.get('descripcion','')
+
+        #Obtiene Objeto que se actualizará
+        asig = Asignatura.objects.get(pk=id)
+
+        #Actualiza objeto con datos recibidos
+        asig.nombre = nom
+        asig.descripcion = descrip 
+        asig.save() 
+
+        data = { 
+            'mensaje': 'Los datos fueron editados correctamente.', 
+            'type' : 'success', 
+            'tittle': 'Editar Asignatura' 
+        } 
+        return JsonResponse(data)
+    except:
+        data = { 
+            'mensaje': 'Error al editar los datos.', 
+            'type' : 'success', 
+            'tittle': 'Editar Asignatura' 
+        } 
+        return JsonResponse(data)
     
 def nivel(request):
     return render(request,'mant_nivel.html', {'niveles':Nivel.objects.all()} )
@@ -120,6 +182,35 @@ def add_nivel(request):
             'mensaje': 'Error al agregar el nivel.', 
             'type' : 'error', 
             'tittle': 'Registro Nivel' 
+        } 
+        return JsonResponse(data)
+    
+def edit_nivel(request, id):
+    
+    try:
+        #Recepción de datos
+        nom = request.POST.get('nombre','')
+        descrip = request.POST.get('descripcion','')
+
+        #Obtiene Objeto que se actualizará
+        nivel = Nivel.objects.get(pk=id)
+
+        #Actualiza objeto con datos recibidos
+        nivel.nombre = nom
+        nivel.descripcion = descrip 
+        nivel.save() 
+
+        data = { 
+            'mensaje': 'Los datos fueron editados correctamente.', 
+            'type' : 'success', 
+            'tittle': 'Editar Nivel' 
+        } 
+        return JsonResponse(data)
+    except:
+        data = { 
+            'mensaje': 'Error al editar los datos.', 
+            'type' : 'success', 
+            'tittle': 'Editar Nivel' 
         } 
         return JsonResponse(data)
 
@@ -160,5 +251,38 @@ def add_otec(request):
             'mensaje': 'Error al agregar la Otec.', 
             'type' : 'error', 
             'tittle': 'Registro Otec' 
+        } 
+        return JsonResponse(data)
+
+def edit_otec(request, id):
+    
+    try:
+        #Recepción de datos
+        nom = request.POST.get('nombre','')
+        direccion = request.POST.get('direccion','')
+        correo = request.POST.get('correo','')
+        tel = request.POST.get('telefono','')
+
+        #Obtiene Objeto que se actualizará
+        otec = Otec.objects.get(pk=id)
+
+        #Actualiza objeto con datos recibidos
+        otec.nombre = nom
+        otec.direccion = direccion                                                                                                                                                                                                        
+        otec.correo = correo
+        otec.telefono = tel
+        otec.save() 
+
+        data = { 
+            'mensaje': 'Los datos fueron editados correctamente.', 
+            'type' : 'success', 
+            'tittle': 'Editar Colegio' 
+        } 
+        return JsonResponse(data)
+    except:
+        data = { 
+            'mensaje': 'Error al editar los datos.', 
+            'type' : 'success', 
+            'tittle': 'Editar Colegio' 
         } 
         return JsonResponse(data)

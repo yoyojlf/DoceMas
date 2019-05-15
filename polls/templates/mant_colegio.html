@@ -165,8 +165,8 @@
                                             <tr>
                                                 <th>Nombre</th>
                                                 <th>Dirección</th>
-                                                <th>Telefono</th>
                                                 <th>Correo</th>
+                                                <th>Telefono</th>
                                                 <th>Editar</th>
                                                 <th>Eliminar</th>
                                             </tr>
@@ -179,7 +179,8 @@
                                                     <td>{{elemento.telefono}}</td>
                                                     <td>{{elemento.correo}}</td>
                                                     <td>
-                                                        <a href="#" data-toggle="modal" data-target="#edit_nivel"><i class="fa fa-pencil"></i> Editar</a>
+                                                        <!-- <a href="#" data-toggle="modal" data-target="#edit_nivel"><i class="fa fa-pencil"></i> Editar</a> -->
+                                                        <button type="button" data-toggle="modal" data-target="#edit_colegio" onclick="cap_datos('{{elemento.id}}', '{{elemento.nombre}}', '{{elemento.direccion}}', '{{elemento.telefono}}', '{{elemento.correo}}' )"><i class="fa fa-pencil"></i> Editar</a></button>
                                                     </td>
                                                     <td>
                                                         <a href="#"><i class="fa fa-trash-o"></i> Borrar</a>
@@ -263,42 +264,44 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                            <h2 class="form-signin-heading modal-title" id="registrationModalLabel">Editar de Colegio</h2>
-                        </div>
-                        <form method="post" id="registration">
+                                <h2 class="form-signin-heading modal-title" id="registrationModalLabel">Editar de Colegio</h2>
+                            </div>
+                            <form id="form_edit" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
                                 <div class="modal-body">
                                     <div class="row">
                                         <div class="form-group">
                                             <div class="col-md-12">
-                                                <input type="text" value="" name="nombre" class="form-control" placeholder="Nombre">
+                                                <input id="nom" type="text" value="" name="nombre" class="form-control" placeholder="Nombre">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group">
                                             <div class="col-md-12">
-                                                <input type="text" value="" name="direccion" class="form-control" placeholder="Dirección">
+                                                <input id="dir" type="text" value="" name="direccion" class="form-control" placeholder="Dirección">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group">
                                             <div class="col-md-12">
-                                                <input type="text" value="" name="correo" class="form-control" placeholder="Correo Electronico">
+                                                <input id="correo" type="text" value="" name="correo" class="form-control" placeholder="Telefono">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group">
                                             <div class="col-md-12">
-                                                <input type="text" value="" name="telefono" class="form-control" placeholder="Telefono">
+                                                <input id="tel" type="text" value="" name="telefono" class="form-control" placeholder="Correo Electronico">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-color">Editar Colegio</button>
+                                    <button id="btn_edit" type="button" class="btn btn-color">Editar Colegio</button>
+                                    <input type="hidden" name="id" id="id">
                                 </div>
                             </form>
                         </div>
@@ -336,6 +339,7 @@
         <script src="{% static "js/sweetalert2.min.js" %}"></script>
 
         <script type="text/javascript">
+            //Add Colegio
             $( document ).ready(function() {
                 $("#btn_add").on("click",function () {
                     $.ajax({
@@ -372,9 +376,62 @@
                             })
                         }
                     });
-                })
-                
+                })                
             });
+            //Fin Add Colegio
+
+            //Rellenar Modal Edit
+            function cap_datos(id, nom, dir, tel, correo){
+                $("#id").val(id)
+                $("#nom").val(nom)
+                $("#dir").val(dir)
+                $("#tel").val(tel)
+                $("#correo").val(correo)
+            }
+
+            //Edit Asignatura
+            $( document ).ready(function() {
+                $("#btn_edit").on("click",function () {
+                    str = $('#form_edit').serialize();
+                    id = id.value
+                    console.log( id );
+                    $.ajax({
+                        type: "POST",
+                        url: "/colegio/edit/" + id,
+                        data: str,
+                        success: function(data) {
+                            if(data.type == 'error'){
+                                swal({
+                                    title: data.tittle,
+                                    text: data.mensaje,
+                                    type: data.type,
+                                    confirmButtonText: 'Aceptar'
+                                })
+                            }else {
+                                swal({
+                                    title: data.tittle,
+                                    text: data.mensaje,
+                                    type: data.type,
+                                    confirmButtonText: 'Aceptar'
+                                }).then((result) => {
+                                        if (result.value) {
+                                            window.location.href = '/colegio';
+                                        }
+                                    })
+                            }  
+                        },
+                        error: function(data) {
+                            swal({
+                                title: data.tittle,
+                                text: data.mensaje,
+                                type: data.type,
+                                confirmButtonText: 'Aceptar'
+                            })
+                        }
+                    });
+                })
+            });
+            //Fin Edit Asignatura
         </script>
     </body>
 </html>
