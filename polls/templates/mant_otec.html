@@ -26,6 +26,8 @@
         <link rel="stylesheet" href="{% static "css/colors/green.css" %}" class="colors">
         <!-- Responsive CSS -->
         <link rel="stylesheet" href="{% static "css/theme-responsive.css" %}">
+        <!--sweetalert-->
+        <link rel="stylesheet" href="{% static "css/sweetalert2.min.css" %}" type="text/css">
         <!-- Favicons -->
         <link rel="shortcut icon" href="{% static "img/ico/favicon.ico" %}">
         <link rel="apple-touch-icon" href="{% static "img/ico/apple-touch-icon.png" %}">
@@ -163,30 +165,27 @@
                                             <tr>
                                                 <th>Nombre</th>
                                                 <th>Dirección</th>
+                                                <th>Correo</th>
                                                 <th>Telefono</th>
                                                 <th>Editar</th>
                                                 <th>Eliminar</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    OTEC uno 
-                                                </td>
-                                                <td>
-                                                    Av. Nueva olea #123
-                                                </td>
-                                                <td>
-                                                    +56 9 9877 3426
-                                                </td>
-                                                <td>
-                                                    <a href="#" data-toggle="modal" data-target="#edit_otec"><i class="fa fa-pencil"></i> Editar</a>
-                                                </td>
-                                                <td>
-                                                    <a href="#"><i class="fa fa-trash-o"></i> Borrar</a>
-                                                    
-                                                </td>
-                                            </tr>
+                                            {% for elemento in otecs %}
+                                                <tr id="datos">
+                                                    <td>{{elemento.nombre}}</td>
+                                                    <td>{{elemento.direccion}}</td>
+                                                    <td>{{elemento.correo}}</td>
+                                                    <td>{{elemento.telefono}}</td>
+                                                    <td>
+                                                        <a href="#" data-toggle="modal" data-target="#edit_nivel"><i class="fa fa-pencil"></i> Editar</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="#"><i class="fa fa-trash-o"></i> Borrar</a>
+                                                    </td>
+                                                </tr>                                                
+                                            {% endfor %}
                                         </tbody>
                                     </table>
                                     <!-- /shopping-cart-table -->
@@ -211,14 +210,15 @@
             </div>
             <!-- Modals -->
             <section id="modals">
-                <!-- Agrega Usuario Modal -->
+                <!-- Agrega OTEC Modal -->
                 <div class="modal register fade" id="add_otec" tabindex="-1" role="dialog" aria-labelledby="registrationModal" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                            <h2 class="form-signin-heading modal-title" id="registrationModalLabel">Registro de OTEC</h2>
-                        </div>
-                        <form method="post" id="registration">
+                                <h2 class="form-signin-heading modal-title" id="registrationModalLabel">Registro de OTEC</h2>
+                            </div>
+                            <form id="form_add" action="/otec/add" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}    
                                 <div class="modal-body">
                                     <div class="row">
                                         <div class="form-group">
@@ -231,6 +231,13 @@
                                         <div class="form-group">
                                             <div class="col-md-12">
                                                 <input type="text" value="" name="direccion" class="form-control" placeholder="Dirección">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <input type="text" value="" name="correo" class="form-control" placeholder="Correo Electronico">
                                             </div>
                                         </div>
                                     </div>
@@ -244,14 +251,14 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-color">Agregar OTEC</button>
+                                    <input id="btn_add" type="button" class="btn btn-color" value="Agregar OTEC">
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <!-- /Agrega Usuario Modal -->
-                <!-- Edita Usuario Modal -->
+                <!-- /Agrega OTEC Modal -->
+                <!-- Edita OTEC Modal -->
                 <div class="modal register fade" id="edit_otec" tabindex="-1" role="dialog" aria-labelledby="registrationModal" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -259,6 +266,7 @@
                                 <h2 class="form-signin-heading modal-title" id="registrationModalLabel">Editar OTEC</h2>
                             </div>
                             <form method="post" id="registration">
+                                {% csrf_token %}
                                 <div class="modal-body">
                                     <div class="row">
                                         <div class="form-group">
@@ -271,6 +279,13 @@
                                         <div class="form-group">
                                             <div class="col-md-12">
                                                 <input type="text" value="" name="direccion" class="form-control" placeholder="Dirección">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <input type="text" value="" name="correo" class="form-control" placeholder="Correo Electronico">
                                             </div>
                                         </div>
                                     </div>
@@ -290,7 +305,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- /Edita Usuario Modal -->
+                <!-- /Edita OTEC Modal -->
             </section>
             <!-- /Modals -->
         <!-- The Scripts -->
@@ -318,6 +333,50 @@
         <script src="{% static "js/wow.js" %}"></script>
         <script src="{% static "js/jquery.fitvids.js" %}"></script>
         <script src="{% static "js/custom.js" %}"></script>
+
+        <script src="{% static "js/sweetalert2.min.js" %}"></script>
+
+        <script type="text/javascript">
+            $( document ).ready(function() {
+                $("#btn_add").on("click",function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/otec/add",
+                        data: $('#form_add').serialize(),
+                        success: function(data) {
+                            if(data.type == 'error'){
+                                swal({
+                                    title: data.tittle,
+                                    text: data.mensaje,
+                                    type: data.type,
+                                    confirmButtonText: 'Aceptar'
+                                })
+                            }else {
+                                swal({
+                                    title: data.tittle,
+                                    text: data.mensaje,
+                                    type: data.type,
+                                    confirmButtonText: 'Aceptar'
+                                }).then((result) => {
+                                        if (result.value) {
+                                            window.location.href = '/otec';
+                                        }
+                                    })
+                            }                        
+                        },
+                        error: function(data) {
+                            swal({
+                                title: data.tittle,
+                                text: data.mensaje,
+                                type: data.type,
+                                confirmButtonText: 'Aceptar'
+                            })
+                        }
+                    });
+                })
+                
+            });
+        </script>
     </body>
 </html>
 
