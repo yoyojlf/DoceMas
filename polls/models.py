@@ -33,3 +33,15 @@ class Otec(models.Model):
     
     def __str__(self):
         return "OTEC"
+
+class Capacitacion(models.Model):
+    otec = models.ForeignKey(Otec, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=50)
+    descripcion = models.CharField(max_length=200)
+    fecha = models.DateField()
+    hora = models.CharField(max_length=70)
+    direccion = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return "CAPACITACION"
+

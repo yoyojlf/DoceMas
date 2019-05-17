@@ -19,4 +19,7 @@ urlpatterns = [
     path('otec',views.otec, name = "otec"),
     path('otec/add',views.add_otec, name = "add_otec"),
     path('otec/edit/<int:id>', views.edit_otec, name = "edit_otec"),
+    path('capac',views.capac, name = "capac"),
+    path('capac/add',views.add_capac, name = "add_capac"),
+    path('capac/edit/<int:id>',views.edit_capac, name = "edit_capac"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

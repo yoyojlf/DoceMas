@@ -6,6 +6,7 @@ from .models import Asignatura
 from .models import Nivel
 from .models import Otec
 from .models import Colegio
+from .models import Capacitacion
 
 # Create your views here.
 
@@ -284,5 +285,85 @@ def edit_otec(request, id):
             'mensaje': 'Error al editar los datos.', 
             'type' : 'success', 
             'tittle': 'Editar Colegio' 
+        } 
+        return JsonResponse(data)
+
+def capac(request):
+    return render(request,'mant_capac.html' , {'capacitaciones':Capacitacion.objects.all(), 'otecs':Otec.objects.all()})
+
+def add_capac(request):
+    try:
+        nom = request.POST.get('nombre','')
+        descrip = request.POST.get('descrip','')
+        fecha = request.POST.get('fecha','')
+        hora = request.POST.get('hora','')
+        direc = request.POST.get('direccion','')
+        
+        otec_id = request.POST.get('otec','')
+        otec = Otec.objects.get(pk=otec_id)
+
+        capac = Capacitacion.objects.filter(nombre=nom)
+
+        if len(capac) == 0 : 
+            capac = Capacitacion(otec=otec, nombre=nom, descripcion=descrip, fecha=fecha, hora=hora, direccion=direc)
+            capac.save()
+            data = { 
+                'mensaje': 'La Capacitación fue registrada correctamente.', 
+                'type' : 'success', 
+                'tittle': 'Registro Capacitación' 
+            } 
+            return JsonResponse(data) 
+
+        else:    
+            data = { 
+                'mensaje': 'Error al registrar la Capacitación. La Capacitación ya existe.', 
+                'type' : 'error', 
+                'tittle': 'Registro Capacitación' 
+            } 
+            return JsonResponse(data)
+    except:
+        data = { 
+            'mensaje': 'Error al agregar la Capacitación.', 
+            'type' : 'error', 
+            'tittle': 'Registro Capacitación' 
+        } 
+        return JsonResponse(data)
+
+def edit_capac(request, id):
+    
+    try:
+        #Recepción de datos
+        nom = request.POST.get('nombre','')
+        descrip = request.POST.get('descrip','')
+        fecha = request.POST.get('fecha','')
+        hora = request.POST.get('hora','')
+        direc = request.POST.get('direccion','')
+        
+        otec_id = request.POST.get('otec','')
+        otec = Otec.objects.get(pk=otec_id)
+        
+        #Obtiene Objeto que se actualizará
+        capac = Capacitacion.objects.get(pk=id)
+
+        #Actualiza objeto con datos recibidos
+        capac.nombre = nom
+        capac.descripcion = descrip                                                                                                                                                                                                        
+        capac.fecha = fecha
+        capac.hora = hora
+        capac.direccion = direc 
+        capac.otec.id = otec_id
+        capac.save() 
+
+        data = { 
+            'mensaje': 'Los datos fueron editados correctamente.', 
+            'type' : 'success', 
+            'tittle': 'Editar Capacitación' 
+        } 
+        return JsonResponse(data)
+    except:
+        data = { 
+            'mensaje': 'Error al editar los datos.', 
+            'type' : 'error', 
+            'tittle': 'Editar Capacitación' 
         } 
         return JsonResponse(data)
