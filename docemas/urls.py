@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
-from users.views import Create as CreateUser
+from users.views import Create as CreateUser, ListUsersView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('polls.urls')),
     url(r'^adm/new_user$', CreateUser.as_view(), name='create_user'), #url normal basada en clase
+    url(r'^adm/users$', ListUsersView.as_view(), name='list_users'), #url normal basada en clase
 ]

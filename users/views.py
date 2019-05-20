@@ -40,6 +40,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import View, ListView
 from django.utils.decorators import method_decorator
 from django.db.models import Q
+from users.models import Usuario
 
 
 # probando crear clase para agregar users
@@ -81,3 +82,19 @@ class Create(View):
             'success_message': success_message
         }
         return render(request, 'users/new_user.html', context)
+
+
+#vista para listar los usuarios OJO es solo para caracter de prueba
+class ListUsersView(View):
+    def get(self, request):
+        users_list = Usuario.objects.all()
+        """
+        html = '<ul>'
+        for photo in photos:
+            html += '<li>'+photo.name+'</li>'
+        html += '</ul>'
+        """
+        context = {
+            "users_list" : users_list
+        }
+        return render(request,"users/list_users.html", context)

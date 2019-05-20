@@ -2,29 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Forma 1</title>
+    <title>Nuevo Usuario</title>
 </head>
 <body>
 
-    <h1>Forma 1</h1>
+    <h1>Nuevo Usuario</h1>
     <hr>
     {% if success_message %}
         {{success_message}}
     {% else %}
-    <form method="POST" action="{% url 'create_user' %}">
-        {% csrf_token %}
-        Usuario:    {{form.username}} <br>
-        Email:  {{form.email}} <br>
-        Contraseña: {{form.password}} <br>
-        Rut:    {{form.rut}} <br>
-        Fecha nacimiento:   {{form.fecha_nac}} <br>
-        Dirección:  {{form.direccion}} <br>
-        Telefono:   {{form.telefono}} <br>
-        Presentacion:   {{form.presentacion}}<br>
-        Colegio:    {{form.colegio}} <br>
-        {{form.last_login.as_hidden}}
-        {{form.date_joined.as_hidden}}
-        <input name="enviar" value="enviar" type="submit">
+
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+        <button>Crear Usuario</button>
+    </div>
     </form>
     {% endif%}
 
