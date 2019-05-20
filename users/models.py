@@ -6,12 +6,12 @@ from polls.models import Colegio
 
 
 class Usuario(AbstractUser):
-    rut = models.CharField(max_length=11)
-    fecha_nac = models.DateField()
-    direccion = models.CharField(max_length=50)
-    telefono = models.CharField(max_length=12)
-    presentacion = models.CharField(max_length=500)
-    colegio = models.ForeignKey(Colegio,on_delete=models.CASCADE)
+    rut = models.CharField(max_length=11,blank=True)
+    fecha_nac = models.DateField(auto_now_add=True)
+    direccion = models.CharField(max_length=50,blank=True)
+    telefono = models.CharField(max_length=12,blank=True)
+    presentacion = models.CharField(max_length=500,blank=True)
+    colegio = models.ForeignKey(Colegio,null=True,blank=True,on_delete=models.CASCADE)
 
     def __str__(self):
         return 'USUARIO'
