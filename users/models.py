@@ -14,4 +14,4 @@ class Usuario(AbstractUser):
     colegio = models.ForeignKey(Colegio,null=True,blank=True,on_delete=models.CASCADE)
 
     def __str__(self):
-        return 'USUARIO'
+        return self.username

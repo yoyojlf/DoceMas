@@ -7,14 +7,14 @@ class Asignatura(models.Model):
     descripcion = models.CharField(max_length=100)
     
     def __str__(self):
-        return "ASIGNATURA"
+        return self.nombre
 
 class Nivel(models.Model):
     nombre = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=100)
     
     def __str__(self):
-        return "NIVEL"
+        return self.nombre
 
 class Colegio(models.Model):
     nombre = models.CharField(max_length=50)
@@ -23,7 +23,7 @@ class Colegio(models.Model):
     correo = models.CharField(max_length=70)
 
     def __str__(self):
-        return "COLEGIO"
+        return self.nombre
 
 class Otec(models.Model):
     nombre = models.CharField(max_length=50)
@@ -32,7 +32,7 @@ class Otec(models.Model):
     telefono = models.CharField(max_length=10)
     
     def __str__(self):
-        return "OTEC"
+        return self.nombre
 
 class Capacitacion(models.Model):
     otec = models.ForeignKey(Otec, on_delete=models.CASCADE)
@@ -43,5 +43,5 @@ class Capacitacion(models.Model):
     direccion = models.CharField(max_length=100)
     
     def __str__(self):
-        return "CAPACITACION"
+        return self.nombre
 
