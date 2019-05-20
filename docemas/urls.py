@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
+from users.views import Create as CreateUser
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('polls.urls'))
+    path('',include('polls.urls')),
+    url(r'^adm/new_user$', CreateUser.as_view(), name='create_user'), #url normal basada en clase
 ]
