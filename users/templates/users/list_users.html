@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de usuarios</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Lista de usuarios{% endblock %}
+
+{%block section %}
     <h1>Lista de usuarios</h1>
     {% for user in users_list %}
         <p>{{user.username}}</p>
     {% endfor %}
+{% endblock %}
 
-</body>
-</html>

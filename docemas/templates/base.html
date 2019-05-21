@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}DoceMas{% endblock %}</title>
+
+        {% load static %}
+
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Google Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,700,800,900' rel='stylesheet' type='text/css'>
+        <!-- Library CSS -->
+        <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+        <link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
+        <link rel="stylesheet" href="{% static "css/fonts/font-awesome/css/font-awesome.css" %}">
+        <link rel="stylesheet" href="{% static "css/animations.css" %}" media="screen">
+        <link rel="stylesheet" href="{% static "css/superfish.css" %}" media="screen">
+        <link rel="stylesheet" href="{% static "css/revolution-slider/css/settings.css" %}" media="screen">
+        <link rel="stylesheet" href="{% static "css/revolution-slider/css/extralayers.css" %}" media="screen">
+        <link rel="stylesheet" href="{% static "css/prettyPhoto.css" %}" media="screen">
+        <!-- Theme CSS -->
+        <link rel="stylesheet" href="{% static "css/style.css" %}">
+        <!-- Skin -->
+        <link rel="stylesheet" href="{% static "css/colors/green.css" %}" class="colors">
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="{% static "css/theme-responsive.css" %}">
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="{% static "img/ico/favicon.ico" %}">
+        <link rel="apple-touch-icon" href="{% static "img/ico/apple-touch-icon.png" %}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static "img/ico/apple-touch-icon-72.png" %}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static "img/ico/apple-touch-icon-114.png" %}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{% static "img/ico/apple-touch-icon-144.png" %}">
+        {% block add_head %}{% endblock %}
+    </head>
+    <body class="home">
+        <div class="page-mask">
+            <div class="page-loader">
+                <div class="spinner"></div>
+                Cargando...
+            </div>
+        </div>
+        <!-- Wrap -->
+        <div class="wrap">
+            <!-- Header -->
+            <header id="header">
+                <!-- Header Top Bar -->
+                <div class="top-bar">
+                    <div class="slidedown collapse">
+                        <div class="container">
+                            <div class="pull-left">
+                                <ul class="social pull-left">
+                                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="phone-login pull-right">
+                                <a><i class="fa fa-phone"></i> Telefono : +56 22 555 7859</a>
+                                <a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in"></i> Iniciar Sesión</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Header Top Bar -->
+                <!-- Main Header -->
+                <div class="main-header">
+                    <div class="container">
+                        <!-- TopNav -->
+                        <div class="topnav navbar-header">
+                            <a class="navbar-toggle down-button" data-toggle="collapse" data-target=".slidedown">
+                            <i class="fa fa-angle-down icon-current"></i>
+                            </a>
+                        </div>
+                        <!-- /TopNav-->
+                        <!-- Logo -->
+                        <div class="logo pull-left">
+                            <h1>
+                                <a href="index.html">
+                                <img class="" src="{% static "img/carrusel/logodocemas.png" %}" alt="DoceMas" width="160" height="60">
+                                </a>
+                            </h1>
+                        </div>
+                        <!-- /Logo -->
+                        <!-- Mobile Menu -->
+                        <div class="mobile navbar-header">
+                            <a class="navbar-toggle" data-toggle="collapse" href=".navbar-collapse">
+                            <i class="fa fa-bars fa-2x"></i>
+                            </a>
+                        </div>
+                        <!-- /Mobile Menu -->
+                        <!-- Menu Start -->
+                        <nav class="collapse navbar-collapse menu">
+                            <ul class="nav navbar-nav sf-menu">
+                                <li>
+                                    <a id="current" href="#">
+                                    Inicio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="" href="#Servicio">
+                                    Servicios
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="" href="#Nosotros">
+                                    Nosotros
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="" href="#Testimonio">
+                                    Testimonio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="" href="#Alcance">
+                                    Alcance
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- /Menu -->
+                    </div>
+                </div>
+                <!-- /Main Header -->
+            </header>
+            <!-- /Header -->
+            <!-- Main Section -->
+            <section id="main">
+
+                {% block section %}Cuerpo{% endblock %}
+
+            </section>
+            <!-- /Main Section -->
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 ">
+                            <p class="credits">&copy; Copyright 2018 by <a href="#">Franco Alvarado</a>. Todos los derechos reservados. </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <section id="modals">
+                <!-- Login Modal -->
+                <div class="modal login fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="form-signin-heading modal-title" id="myModalLabel">Inicio de Sesión</h2>
+                            </div>
+                            <form method="post" id="login">
+                                <div class="modal-body">
+                                    <fieldset>
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <input class="form-control" id="username" name="username" type="text" placeholder="Usuario" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <input class="form-control" type="password" id="contrasenia" name="contrasenia" placeholder="Contraseña" value="" required>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="password-recovery.html" class="pull-left">¿Perdio su contraseña?</a>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-color">Iniciar Sesión</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Logan Modal -->
+                <!-- Registration Modal -->
+                <div class="modal register fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h2 class="form-signin-heading modal-title" id="registrationModalLabel">Create a new account</h2>
+                        </div>
+                        <form method="post" id="registration">
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <input type="text" value="" class="form-control" placeholder="First Name">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" value="" class="form-control" placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <input type="text" value="" class="form-control" placeholder="E-mail Address">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <input type="password" value="" class="form-control" placeholder="Password">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="password" value="" class="form-control" placeholder="Re-enter Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-color">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Registration Modal -->
+            </section>
+            <!-- Scroll To Top -->
+            <a href="#" class="scrollup"><i class="fa fa-angle-up" %}"></i></a>
+        </div>
+        <!-- /Wrap -->
+        <!-- The Scripts -->
+        <script src="{% static "js/jquery.min.js" %}"></script>
+        <script src="{% static "js/jquery-migrate-1.0.0.js" %}"></script>
+        <script src="{% static "js/jquery-ui.js" %}"></script>
+        <script src="{% static "js/bootstrap.js" %}"></script>
+        <script src="{% static "js/revolution-slider/js/jquery.themepunch.plugins.min.js" %}"></script>
+        <script src="{% static "js/revolution-slider/js/jquery.themepunch.revolution.min.js" %}"></script>
+        <script src="{% static "js/jquery.parallax.js" %}"></script>
+        <script src="{% static "js/jquery.wait.js" %}"></script>
+        <script src="{% static "js/fappear.js" %}"></script>
+        <script src="{% static "js/modernizr-2.6.2.min.js" %}"></script>
+        <script src="{% static "js/jquery.bxslider.min.js" %}"></script>
+        <script src="{% static "js/jquery.prettyPhoto.js" %}"></script>
+        <script src="{% static "js/superfish.js" %}"></script>
+        <script src="{% static "js/tweetMachine.js" %}"></script>
+        <script src="{% static "js/tytabs.js" %}"></script>
+        <script src="{% static "js/jquery.gmap.min.js" %}"></script>
+        <script src="{% static "js/jquery.sticky.js" %}"></script>
+        <script src="{% static "js/jquery.countTo.js" %}"></script>
+        <script src="{% static "js/jflickrfeed.js" %}"></script>
+        <script src="{% static "js/imagesloaded.pkgd.min.js" %}"></script>
+        <script src="{% static "js/waypoints.min.js" %}"></script>
+        <script src="{% static "js/wow.js" %}"></script>
+        <script src="{% static "js/jquery.fitvids.js" %}"></script>
+        <script src="{% static "js/custom.js" %}"></script>
+    </body>
+</html>
+

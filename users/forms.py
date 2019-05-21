@@ -7,6 +7,12 @@ class UsuarioForm(forms.ModelForm):
         model = Usuario
         exclude = ['is_staff','is_superuser','last_login','date_joined','groups','user_permissions',]
 
+
+class UsuarioFormSu(forms.ModelForm):
+    class Meta:
+        model = Usuario
+        exclude = []
+
 """
         list_display =   ('id','username','password','first_name','last_name',
 'email','is_staff','is_active','is_superuser',

@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Nuevo Usuario</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
+{% block title %}Nuevo usuario{% endblock %}
+
+{%block section %}
     <h1>Nuevo Usuario</h1>
     <hr>
     {% if success_message %}
@@ -21,7 +18,4 @@
     </form>
     {% endif%}
 
-
-
-</body>
-</html>
+{% endblock %}
