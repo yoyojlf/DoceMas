@@ -7,6 +7,10 @@ class UsuarioForm(forms.ModelForm):
         model = Usuario
         exclude = ['is_staff','is_superuser','last_login','date_joined','groups','user_permissions',]
 
+class LoginForm(forms.Form):
+
+    usr = forms.CharField(label='Nombre de usuario')
+    pwd = forms.CharField(label='Contraseña', widget=forms.PasswordInput())
 
 class UsuarioFormSu(forms.ModelForm):
     class Meta:

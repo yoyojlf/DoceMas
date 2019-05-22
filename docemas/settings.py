@@ -118,6 +118,9 @@ USE_L10N = True
 USE_TZ = True
 
 
+# Login url
+LOGIN_URL = '/login'#cuando un usuario no esta autenticado, le redirige a /login
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 

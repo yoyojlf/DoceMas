@@ -32,15 +32,57 @@ def add_user(request):
 #imports
 from django.http import HttpResponse
 from django.http import response
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from users.models import Usuario
-from users.forms import UsuarioForm
+from users.forms import UsuarioForm, LoginForm
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.views.generic import View, ListView
 from django.utils.decorators import method_decorator
 from django.db.models import Q
 from users.models import Usuario
+from django.contrib.auth import logout as django_logout, authenticate, login as django_login
+
+
+#Login y logout
+class LoginView(View):
+    def get(self,request):
+        error_messages = []
+        form = LoginForm()
+        context = {
+            'errors': error_messages,
+            'login_form': form
+        }
+        return render(request,'users/login.html', context)
+
+    def post(self, request):
+        error_messages = []
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('usr')
+            password = form.cleaned_data.get('pwd', '')
+            user = authenticate(username=username, password=password)
+            if user is None:
+                error_messages.append('Nombre de usuario o contraseña incorrectos')
+            else:
+                if user.is_active:
+                    django_login(request, user)
+                    url = request.GET.get('next', 'index')
+                    return redirect(url)
+                else:
+                    error_messages.append('El usuario no está activo')
+        context = {
+            'errors': error_messages,
+            'login_form': form
+        }
+        return render(request,'users/login.html', context)
+
+class LogoutView(View):
+    def get(self,request):
+        if request.user.is_authenticated:
+            django_logout(request)
+        return redirect('index')
+
 
 
 # probando crear clase para agregar users

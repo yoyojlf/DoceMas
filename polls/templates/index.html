@@ -56,8 +56,16 @@
                                 </ul>
                             </div>
                             <div class="phone-login pull-right">
-                                <a><i class="fa fa-phone"></i> Telefono : +56 22 555 7859</a>
-                                <a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in"></i> Iniciar Sesión</a>
+                                {% if user.is_authenticated %}
+                                <a> Hola {{user.username}}</a>
+
+                                <!--data-toggle="modal" data-target="#loginModal"-->
+                                <a href="{% url 'users_logout' %}" ><i class="fa fa-sign-in"></i> Cerrar Sesión</a>
+                                {% else %}
+                                <a> Hola deberias iniciar sesión -></a>
+                                <!--data-toggle="modal" data-target="#loginModal"-->
+                                <a href="{% url 'users_login' %}" ><i class="fa fa-sign-in"></i> Iniciar Sesión</a>
+                                {% endif %}
                                 
                             </div>
                         </div>
