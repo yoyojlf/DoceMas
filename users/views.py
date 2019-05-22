@@ -31,6 +31,7 @@ def add_user(request):
 """
 #imports
 from django.http import HttpResponse
+from django.http import JsonResponse
 from django.http import response
 from django.shortcuts import render, redirect
 from users.models import Usuario
@@ -116,14 +117,19 @@ class Create(View):
         if form.is_valid():
             new_user = form.save()
             #form = PhotoForm()
-            success_message = 'Usuario guardado con éxito'
+            data = { 
+                'mensaje': 'El usuario fue registrado correctamente.', 
+                'type' : 'success', 
+                'tittle': 'Registro Usuario' 
+            } 
+            return JsonResponse(data) 
         else:
-            success_message = 'Informacion no valida'
-        context = {
-            'form': form,
-            'success_message': success_message
-        }
-        return render(request, 'users/new_user.html', context)
+            data = { 
+                'mensaje': 'El usuario fue registrado correctamente.', 
+                'type' : 'error', 
+                'tittle': 'Registro Usuario' 
+            } 
+            return JsonResponse(data) 
 
 
 #vista para listar los usuarios OJO es solo para caracter de prueba
@@ -140,3 +146,47 @@ class ListUsersView(View):
             "users_list" : users_list
         }
         return render(request,"users/list_users.html", context)
+
+class Edit_user(View):
+    #@method_decorator(login_required())
+    def get(self,request, pk):
+        """
+        esto cmuestra un formulario para crear una foto
+        :param request:
+        :return:
+        """
+
+        form = UsuarioForm()
+        context = {
+            'form': form,
+            'success_message': ''
+        }
+        return render(request, 'users/edit_user.html', context)
+
+    #@method_decorator(login_required())
+    def post(self,request, pk):
+        """
+        esto cmuestra un formulario para crear una foto y la crea
+        :param request:
+        :return:
+        """
+        
+        success_message = ''
+        usuario =  Usuario.objects.get(pk=pk)[0]
+        if request.method == "POST":
+            form = UsuarioForm(request.POST, instance=usuario)
+            if form.is_valid():
+                usuario = form.save(commit=False)
+                    
+                usuario.save()
+                success_message = 'Usuario guardado con éxito'
+            else:
+                success_message = 'Informacion no valida'
+                context = {
+                    'form': form,
+                    'success_message': success_message
+                }
+                return render(request, 'users/edit_user.html', context)
+        else:
+            form = UsuarioForm(instance=usuario)
+            return render(request, 'users/edit_user.html', {'form': form})

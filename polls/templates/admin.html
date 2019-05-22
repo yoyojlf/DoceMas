@@ -152,10 +152,10 @@
                             <div class="col-lg-4 col-md-4 col-sm-4 text-center wow fadeInLeft">
                                 <div class="service-box padding-top30 padding-bottom40">
                                     <div class="service-box-icon">
-                                        <a href="usuario"><img alt="Usuarios" src="{% static "img/icons/usuario.png" %}"></a>
+                                        <a href="{% url 'list_users' %}"><img alt="Usuarios" src="{% static "img/icons/usuario.png" %}"></a>
                                     </div>
                                     <div class="service-box-info">
-                                        <a href="usuario">
+                                        <a href="{% url 'list_users' %}">
                                             <h3 class="padding-top25">Usuarios</h3>
                                         </a>
                                         <p>

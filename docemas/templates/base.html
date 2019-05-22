@@ -26,6 +26,8 @@
         <link rel="stylesheet" href="{% static "css/colors/green.css" %}" class="colors">
         <!-- Responsive CSS -->
         <link rel="stylesheet" href="{% static "css/theme-responsive.css" %}">
+        <!--sweetalert-->
+        <link rel="stylesheet" href="{% static "css/sweetalert2.min.css" %}" type="text/css">
         <!-- Favicons -->
         <link rel="shortcut icon" href="{% static "img/ico/favicon.ico" %}">
         <link rel="apple-touch-icon" href="{% static "img/ico/apple-touch-icon.png" %}">
@@ -84,11 +86,20 @@
                         <!-- /TopNav-->
                         <!-- Logo -->
                         <div class="logo pull-left">
-                            <h1>
-                                <a href="index.html">
-                                <img class="" src="{% static "img/carrusel/logodocemas.png" %}" alt="DoceMas" width="160" height="60">
-                                </a>
-                            </h1>
+                            {% if user.is_authenticated %}
+                                <h1>
+                                    <a href="/adm">
+                                    <img class="" src="{% static "img/carrusel/logodocemas.png" %}" alt="DoceMas" width="160" height="60">
+                                    </a>
+                                </h1>
+                            {% else %}
+                                <h1>
+                                    <a href="/">
+                                    <img class="" src="{% static "img/carrusel/logodocemas.png" %}" alt="DoceMas" width="160" height="60">
+                                    </a>
+                                </h1>
+                            {% endif %}
+                            
                         </div>
                         <!-- /Logo -->
                         {% include 'nav_principal.html' %}
@@ -198,7 +209,7 @@
                 <!-- /Registration Modal -->
             </section>
             <!-- Scroll To Top -->
-            <a href="#" class="scrollup"><i class="fa fa-angle-up" %}"></i></a>
+            <a href="#" class="scrollup"><i class="fa fa-angle-up" ></i></a>
         </div>
         <!-- /Wrap -->
         <!-- The Scripts -->
@@ -226,6 +237,53 @@
         <script src="{% static "js/wow.js" %}"></script>
         <script src="{% static "js/jquery.fitvids.js" %}"></script>
         <script src="{% static "js/custom.js" %}"></script>
+
+        <script src="{% static "js/sweetalert2.min.js" %}"></script>
+
+        <script type="text/javascript">
+
+            //Add USER
+            $( document ).ready(function() {
+                $("#btn_add").on("click",function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/adm/new_user",
+                        data: $('#form_add').serialize(),
+                        success: function(data) {
+                            if(data.type == 'error'){
+                                swal({
+                                    title: data.tittle,
+                                    text: data.mensaje,
+                                    type: data.type,
+                                    confirmButtonText: 'Aceptar'
+                                })
+                            }else {
+                                swal({
+                                    title: data.tittle,
+                                    text: data.mensaje,
+                                    type: data.type,
+                                    confirmButtonText: 'Aceptar'
+                                }).then((result) => {
+                                        if (result.value) {
+                                            window.location.href = '/adm/users';
+                                        }
+                                    })
+                            }                        
+                        },
+                        error: function(data) {
+                            swal({
+                                title: data.tittle,
+                                text: data.mensaje,
+                                type: data.type,
+                                confirmButtonText: 'Aceptar'
+                            })
+                        }
+                    });
+                })
+                
+            });
+            //Fin Add USER
+        </script>
     </body>
 </html>
 

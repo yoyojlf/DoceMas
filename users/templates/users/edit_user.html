@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
-
-{%block section %}
+{% block section %}
 
 <!-- Title, Breadcrumb -->
 <div class="breadcrumb-wrapper">
@@ -12,7 +11,7 @@
                     <div class="padding-top40 text-center">
                         <h2 class="light wow fadeIn">Mantenedor de Usuarios</h2>
                         <h4 class="light wow fadeInRight">
-                            Formulario para agregar un nuevo usuario
+                            Formulario para editar el usuario
                         </h4>
                     </div>
                 </div>    
@@ -21,24 +20,13 @@
     </div>
 </div>
 <!-- /Title, Breadcrumb -->
-    <br><br>
-    
+
     {% if success_message %}
         {{success_message}}
     {% else %}
-
-    <form id="form_add"  method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <div>
-        <input type="button" id="btn_add" class="btn btn-color" value="Crear Usuario">
-    </div>
-    </form>
+        <form method="POST">{% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-color">Guardar</button>
+        </form>
     {% endif%}
-
-    
-
 {% endblock %}
-
-
-

@@ -3,9 +3,80 @@
 {% block title %}Lista de usuarios{% endblock %}
 
 {%block section %}
+
+<!-- Title, Breadcrumb -->
+<div class="breadcrumb-wrapper">
+    <div class="pattern-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                    <h2 class="title">Mantenedor de Usuarios</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Title, Breadcrumb -->
+    
+<!-- Main Content -->
+<div class="content margin-bottom60">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <table class="shopping-cart-table table">
+                        <tbody>
+                            <tr>
+                                <td class="action no-border">
+                                    <a class="update btn btn-color pull-left" href="{% url 'create_user' %}" > Agregar Usuario</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-box">
+                        <!-- shopping-cart-table -->
+                        <table class="shopping-cart-table responsive-table table table-bordered table-striped" id="shopping-cart-table">
+                            <thead>
+                                <tr>
+                                    <th>User name</th>
+                                    <th>Rut</th>
+                                    <th>Nombre</th>
+                                    <th>Fecha Nacimiento</th>
+                                    <th>Correo</th>                                    
+                                    <th>Telefono</th>
+                                    <th>Dirección</th>
+                                    <th>Editar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for user in users_list %}
+                                    <tr id="datos">
+                                        <td>{{user.username}}</td>    
+                                        <td>{{user.rut}}</td>    
+                                        <td>{{user.first_name}} {{user.last_name}}</td>    
+                                        <td>{{user.fecha_nac}}</td>    
+                                        <td>{{user.email}}</td>    
+                                        <td>{{user.telefono}}</td>    
+                                        <td>{{user.direccion}}</td>
+                                        <td>
+                                            <a href="{% url 'edit_user' pk=user.pk %}" ><i class="fa fa-pencil"></i> Editar</a>
+                                        </td>    
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!-- /shopping-cart-table -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Main Content -->
+
+    <!--
     <h1>Lista de usuarios</h1>
     {% for user in users_list %}
         <p>{{user.username}}</p>
     {% endfor %}
+    -->
 {% endblock %}
 
