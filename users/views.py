@@ -67,7 +67,7 @@ class LoginView(View):
             else:
                 if user.is_active:
                     django_login(request, user)
-                    url = request.GET.get('next', 'index')
+                    url = request.GET.get('next', 'admin')
                     return redirect(url)
                 else:
                     error_messages.append('El usuario no está activo')
