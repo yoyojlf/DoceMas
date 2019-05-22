@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b458608-187a-4469-8c5e-5c5351bd05b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docemas/templates/nav_principal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/polls/templates/polls/nav_adm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docemas/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/docemas/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polls/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polls/templates/mant_asignatura.html" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templates/mant_asignatura.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polls/templates/mant_capac.html" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templates/mant_capac.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polls/templates/mant_colegio.html" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templates/mant_colegio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polls/templates/mant_nivel.html" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templates/mant_nivel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polls/templates/mant_otec.html" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templates/mant_otec.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polls/templates/mant_usuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templates/mant_usuario.html" afterDir="false" />
-    </list>
+    <list default="true" id="1b458608-187a-4469-8c5e-5c5351bd05b1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,10 +37,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/polls/templates/mant_capac.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="119">
               <caret line="83" column="58" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
             </state>
           </provider>
@@ -104,7 +91,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docemas/templates/nav_principal.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
@@ -424,13 +411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/polls/templates/mant_capac.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="83" column="58" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/polls/templates/mant_colegio.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -470,6 +450,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/templates/mant_capac.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="83" column="58" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
         </state>
       </provider>
     </entry>
