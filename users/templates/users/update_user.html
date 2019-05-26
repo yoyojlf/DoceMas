@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Actualizar usuario{% endblock %}
+
+{%block section %}
+    <h1>Actualizar usuario</h1>
+    <hr>
+    {% if success_message %}
+        {{success_message}}
+    {% else %}
+
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+        <button class="btn btn-color">Crear Usuario</button>
+    </div>
+    </form>
+    {% endif%}
+
+{% endblock %}
+

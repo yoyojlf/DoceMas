@@ -6,6 +6,9 @@ class UsuarioForm(forms.ModelForm):
     class Meta:
         model = Usuario
         exclude = ['is_staff','is_superuser','last_login','date_joined','groups','user_permissions',]
+        widgets = {
+            'password': forms.PasswordInput(),
+        }
 
 class LoginForm(forms.Form):
 
@@ -16,6 +19,9 @@ class UsuarioFormSu(forms.ModelForm):
     class Meta:
         model = Usuario
         exclude = []
+        widgets = {
+            'password': forms.PasswordInput(),
+        }
 
 """
         list_display =   ('id','username','password','first_name','last_name',

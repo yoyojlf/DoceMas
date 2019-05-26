@@ -43,6 +43,21 @@ from django.db.models import Q
 from users.models import Usuario
 from django.contrib.auth import logout as django_logout, authenticate, login as django_login
 
+#Query que retorna los usuarios
+class UsersQueryset(object):
+
+    def get_users_queryset(self,request):
+        """
+        if not request.user.is_authenticated:
+            photos = Photo.objects.filter(visibility=PUBLIC)
+        elif request.user.is_superuser:
+            photos = Photo.objects.all()
+        else:
+            photos = Photo.objects.filter(Q(owner=request.user) | Q(visibility=PUBLIC))
+        """
+        users = Usuario.objects.all()
+        return users
+
 
 #Login y logout
 class LoginView(View):
@@ -140,3 +155,24 @@ class ListUsersView(View):
             "users_list" : users_list
         }
         return render(request,"users/list_users.html", context)
+
+#vista para visualizar el detalle de un usuario
+class UserDetailView(View, UsersQueryset):
+    def get(self,request,pk):
+        """
+        Carga la página de detalle de una foto
+        :param request:
+        :param pk:
+        :return: HttpResponse
+        """
+#        possible_photos = Photo.objects.filter(pk=pk).select_related('owner')
+        possible_users = self.get_users_queryset(request).filter(pk=pk)#.select_related('owner')
+        usuario = possible_users[0] if len(possible_users) == 1 else None
+        if usuario is not None:
+            #cargamos el detalle
+            context = {
+                'usuario': usuario
+            }
+            return render(request, 'users/detail.html',context)
+        else:
+            return response.HttpResponseNotFound('No existe el usuario')#error 404

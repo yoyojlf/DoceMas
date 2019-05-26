@@ -4,8 +4,11 @@
 
 {%block section %}
     <h1>Lista de usuarios</h1>
+<!--
     {% for user in users_list %}
         <p>{{user.username}}</p>
     {% endfor %}
+    -->
+    {% include 'users/users_loop.html'  %}
 {% endblock %}
 

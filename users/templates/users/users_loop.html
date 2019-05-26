@@ -1,0 +1,7 @@
+{% for usuario in users_list %}
+    <p>
+        <a href="{% url 'user_detail' usuario.pk %}">
+            {{ usuario.username }}
+        </a>
+    </p>
+{% endfor %}
