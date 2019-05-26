@@ -176,3 +176,49 @@ class UserDetailView(View, UsersQueryset):
             return render(request, 'users/detail.html',context)
         else:
             return response.HttpResponseNotFound('No existe el usuario')#error 404
+
+#vista para visualizar el detalle de un usuario
+class UserEditView(View, UsersQueryset):
+    def get(self,request,pk):
+        """
+        Carga la página de detalle de una foto
+        :param request:
+        :param pk:
+        :return: HttpResponse
+        """
+#        possible_photos = Photo.objects.filter(pk=pk).select_related('owner')
+        possible_users = self.get_users_queryset(request).filter(pk=pk)#.select_related('owner')
+        usuario = possible_users[0] if len(possible_users) == 1 else None
+        if usuario is not None:
+            #cargamos el detalle
+            context = {
+                'form': UsuarioForm(instance=usuario)
+            }
+            return render(request, 'users/update_user.html',context)
+        else:
+            return response.HttpResponseNotFound('No existe el usuario')#error 404
+
+    def post(self,request,pk):
+        """
+        esto cmuestra un formulario para crear una foto y la crea
+        :param request:
+        :return:
+        """
+
+        success_message = ''
+        possible_users = self.get_users_queryset(request).filter(pk=pk)#.select_related('owner')
+        usuario = possible_users[0] if len(possible_users) == 1 else None
+        if usuario is not None:
+            form = UsuarioForm(request.POST,instance=usuario)
+            if form.is_valid():
+                form.save()
+                #form = PhotoForm()
+                success_message = 'Usuario guardado con éxito'
+            else:
+                success_message = 'Informacion no valida'
+            context = {
+                'form': form,
+                'success_message': success_message
+            }
+            return render(request, 'users/update_user.html', context)
+

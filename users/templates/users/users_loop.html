@@ -1,7 +1,13 @@
 {% for usuario in users_list %}
-    <p>
+    {% if not usuario.is_superuser %}
+        <p>
+        {{ usuario.username }}
         <a href="{% url 'user_detail' usuario.pk %}">
-            {{ usuario.username }}
+            Detalle
         </a>
-    </p>
+        <a href="{% url 'user_edit' usuario.pk %}">
+            Editar
+        </a>
+        </p>
+    {% endif %}
 {% endfor %}

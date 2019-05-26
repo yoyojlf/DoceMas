@@ -7,16 +7,16 @@
     <hr>
     {% if success_message %}
         {{success_message}}
-    {% else %}
+    {% endif%}
 
     <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <div>
-        <button class="btn btn-color">Crear Usuario</button>
+        <button class="btn btn-color">Actializar Usuario</button>
     </div>
     </form>
-    {% endif%}
+
 
 {% endblock %}
 

@@ -9,6 +9,13 @@ class UsuarioForm(forms.ModelForm):
         widgets = {
             'password': forms.PasswordInput(),
         }
+    def save(self, commit=True): # Save the provided password in hashed format #
+        user = super(UsuarioForm, self).save(commit=False)
+        user.set_password(self.cleaned_data["password"])
+
+        if commit:
+            user.save()
+        return user
 
 class LoginForm(forms.Form):
 

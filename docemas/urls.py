@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
-from users.views import Create as CreateUser, ListUsersView, LoginView, LogoutView, UserDetailView
+from users.views import Create as CreateUser, ListUsersView, LoginView, LogoutView, UserDetailView, UserEditView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +25,8 @@ urlpatterns = [
     url(r'^adm/users$', ListUsersView.as_view(), name='list_users'), #url normal basada en clase
     #ver detalle usuario
     url(r'^adm/User_Detail(?P<pk>[0-9]+)$', UserDetailView.as_view(), name='user_detail'), #url normal basada en clase
+    #Actualizar usuario
+    url(r'^adm/user_edit/(?P<pk>[0-9]+)$', UserEditView.as_view(), name='user_edit'), #url normal basada en clase
 
     #Login Logout
     url(r'^login$', LoginView.as_view(), name='users_login'), #url normal basada en clase
