@@ -2,13 +2,15 @@
 from django import forms
 from foro.models import Hilo, ReHilo
 
-class AddHilo(forms.ModelForm):
+class HiloForm(forms.ModelForm):
     class Meta:
         model = Hilo
-        exclude = ['owner']
+        exclude = []
 
 
-class AddHilo(forms.ModelForm):
+
+class ReHiloForm(forms.ModelForm):
     class Meta:
-        model = Hilo
-        exclude = ['owner'] 
+        model = ReHilo
+        exclude = []
+

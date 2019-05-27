@@ -5,7 +5,8 @@ from foro.settings import VISIBILITY, PUBLIC
 
 
 # Create your models here.
-class Hilo():
+
+class Hilo(models.Model):
     owner = models.ForeignKey(Usuario,null=True,blank=True,on_delete=models.CASCADE)
     titulo = models.CharField(max_length=50,blank=True)
     descripcion = models.CharField(max_length=500,blank=True)
@@ -13,11 +14,19 @@ class Hilo():
     estado = models.BooleanField(default=True)
     visibility = models.CharField(max_length=3,choices=VISIBILITY, default=PUBLIC)
 
-class ReHilo():
+    def __str__(self):
+        return self.titulo
+
+
+class ReHilo(models.Model):
     owner = models.ForeignKey(Usuario,null=True,blank=True,on_delete=models.CASCADE)
     titulo = models.CharField(max_length=50,blank=True)
     descripcion = models.CharField(max_length=500,blank=True)
     fecha = models.DateTimeField(auto_now_add=True)
     estado = models.BooleanField(default=True)
     visibility = models.CharField(max_length=3,choices=VISIBILITY, default=PUBLIC)
-    hilo = models.ForeignKey(Hilo,on_delete=models.CASCADE)
+    at_hilo = models.ForeignKey(Hilo,null=True,blank=True,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.titulo
+
