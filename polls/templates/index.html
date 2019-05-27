@@ -1,19 +1,22 @@
 {% extends 'base.html' %}
 
-{% block title %}Lista de usuarios{% endblock %}
+{% load static %}
+
+{% block title %} DoceMas {% endblock %}
 
 {% block bar_nav %}{% include 'nav_principal.html' %}{% endblock %}
 
-{%block section %}
+{% block section %}
+
                 <div class="fullwidthbanner-container tp-banner-container">
                     <div class="fullwidthbanner rslider tp-banner">
                         <ul>
                             <li data-transition="fade" data-slotamount="7" data-masterspeed="2000" data-thumb="homeslider_thumb2.jpg" data-delay="10000"  data-saveperformance="on">
-                                <img src="{% static "img/carrusel/profe1.jpg" %}"  alt="Profe 1" data-bgposition="right top" data-kenburns="on" data-duration="12000" data-ease="Power0.easeInOut" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center bottom">
+                                <img src="{% static 'img/carrusel/profe1.jpg' %}"  alt="Profe 1" data-bgposition="right top" data-kenburns="on" data-duration="12000" data-ease="Power0.easeInOut" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center bottom">
 
                             </li>
                             <li data-transition="fade" data-slotamount="1" data-masterspeed="300">
-                                <img src="{% static "img/carrusel/profe3.jpg" %}" data-fullwidthcentering="on" alt="Profe 3">
+                                <img src="{% static 'img/carrusel/profe3.jpg' %}" data-fullwidthcentering="on" alt="Profe 3">
                             </li>
                         </ul>
                     </div>

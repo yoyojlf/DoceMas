@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
+from django.views.generic import View, ListView
 
 #MODELOS BD
 from .models import Asignatura
@@ -13,8 +16,10 @@ from .models import Capacitacion
 def index(request):
     return render(request,'index.html')
 
-def admin(request):
-    return render(request,'admin.html')
+class AdminView(View):
+    @method_decorator(login_required())
+    def get(self,request):
+        return render(request,'admin.html')
 
 def colegio(request):
     return render(request,'mant_colegio.html', {'colegios':Colegio.objects.all()} )
