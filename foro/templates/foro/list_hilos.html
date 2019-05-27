@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Hilos{% endblock %}
+
+{%block section %}
+    <h1>Hilos</h1>
+
+    {% for hilo in hilos_list %}
+    <br>
+        <p>{{hilo.titulo}}</p>
+        <p>Autor: {{hilo.owner.username}} |<a>Detail</a></p>
+
+    <br>
+    {% endfor %}
+
+    <!--{% include 'users/users_loop.html'  %}-->
+{% endblock %}
