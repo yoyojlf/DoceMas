@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 from users.views import Create as CreateUser, ListUsersView, LoginView, LogoutView, UserDetailView, UserEditView
-from foro.views import CreateHilo, ListHilosView
+from foro.views import CreateHilo, ListHilosView, CreateReHilo, HiloDetailView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,7 +32,11 @@ urlpatterns = [
     #url foro
     url(r'^foro/new_hilo$', CreateHilo.as_view(), name='create_hilo'), #url normal basada en clase
     #url hilos
-    url(r'^foro/hilos$', ListHilosView.as_view(), name='list_hilo'), #url normal basada en clase
+    url(r'^foro/all$', ListHilosView.as_view(), name='list_hilo'), #url normal basada en clase
+    #url ReHilo
+    url(r'^foro/re_hilo$', CreateReHilo.as_view(), name='create_rehilo'), #url normal basada en clase
+    #ver detalle usuario
+    url(r'^foro/hilo/(?P<pk>[0-9]+)$', HiloDetailView.as_view(), name='hilo_detail'), #url normal basada en clase
 
     #Login Logout
     url(r'^login$', LoginView.as_view(), name='users_login'), #url normal basada en clase

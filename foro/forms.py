@@ -12,5 +12,5 @@ class HiloForm(forms.ModelForm):
 class ReHiloForm(forms.ModelForm):
     class Meta:
         model = ReHilo
-        exclude = []
+        exclude = ['at_hilo']
 
