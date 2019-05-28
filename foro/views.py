@@ -164,6 +164,7 @@ class HiloDetailView(View, HilosQueryset):
         hilo = possible_hilos[0] if len(possible_hilos) == 1 else None
         re_con_hilo = ReHilo()
         re_con_hilo.at_hilo = hilo #asigno hilo al que pertenece
+        re_con_hilo.titulo = "Re: "+ str(hilo.titulo)
         form = ReHiloForm(request.POST, instance=re_con_hilo)
 
         if form.is_valid():
