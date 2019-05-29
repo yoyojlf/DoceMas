@@ -1,0 +1,99 @@
+<script type="text/javascript">
+
+    //Add CAPACITACION
+    $( document ).ready(function() {
+        $("#btn_add").on("click",function () {
+            $.ajax({
+                type: "POST",
+                url: "/capac/add",
+                data: $('#form_add').serialize(),
+                success: function(data) {
+                    if(data.type == 'error'){
+                        swal({
+                            title: data.tittle,
+                            text: data.mensaje,
+                            type: data.type,
+                            confirmButtonText: 'Aceptar'
+                        })
+                    }else {
+                        swal({
+                            title: data.tittle,
+                            text: data.mensaje,
+                            type: data.type,
+                            confirmButtonText: 'Aceptar'
+                        }).then((result) => {
+                                if (result.value) {
+                                    window.location.href = '/capac';
+                                }
+                            })
+                    }                        
+                },
+                error: function(data) {
+                    swal({
+                        title: data.tittle,
+                        text: data.mensaje,
+                        type: data.type,
+                        confirmButtonText: 'Aceptar'
+                    })
+                }
+            });
+        })
+        
+    });
+    //Fin Add CAPACITACION
+
+    //Captura datos y Rellenar Modal Edit
+    function cap_datos(id, nom, desc, fec, hora, dir, otec){
+        $("#id").val(id)
+        $("#nom").val(nom)
+        $("#desc").val(desc)
+        $("#fec").val(fec)
+        $("#hora").val(hora)
+        $("#dir").val(dir)
+        $("#otec").val(otec)
+    }
+
+    //Edit CAPACITACION
+    $( document ).ready(function() {
+        $("#btn_edit").on("click",function () {
+            str = $('#form_edit').serialize();
+            id = id.value
+            console.log( id );
+            $.ajax({
+                type: "POST",
+                url: "/capac/edit/" + id,
+                data: str,
+                success: function(data) {
+                    if(data.type == 'error'){
+                        swal({
+                            title: data.tittle,
+                            text: data.mensaje,
+                            type: data.type,
+                            confirmButtonText: 'Aceptar'
+                        })
+                    }else {
+                        swal({
+                            title: data.tittle,
+                            text: data.mensaje,
+                            type: data.type,
+                            confirmButtonText: 'Aceptar'
+                        }).then((result) => {
+                                if (result.value) {
+                                    window.location.href = '/capac';
+                                }
+                            })
+                    }  
+                },
+                error: function(data) {
+                    swal({
+                        title: data.tittle,
+                        text: data.mensaje,
+                        type: data.type,
+                        confirmButtonText: 'Aceptar'
+                    })
+                }
+            });
+        })
+    });
+    //Fin Edit CAPACITACION
+</script>

@@ -1,0 +1,94 @@
+<script type="text/javascript">
+    //Add Asignatura
+    $( document ).ready(function() {
+        $("#btn_add").on("click",function () {
+            $.ajax({
+                type: "POST",
+                url: "/asig/add",
+                data: $('#form_add').serialize(),
+                success: function(data) {
+                    if(data.type == 'error'){
+                        swal({
+                            title: data.tittle,
+                            text: data.mensaje,
+                            type: data.type,
+                            confirmButtonText: 'Aceptar'
+                        })
+                    }else {
+                        swal({
+                            title: data.tittle,
+                            text: data.mensaje,
+                            type: data.type,
+                            confirmButtonText: 'Aceptar'
+                        }).then((result) => {
+                                if (result.value) {
+                                    window.location.href = '/asig';
+                                }
+                            })
+                    }                        
+                },
+                error: function(data) {
+                    swal({
+                        title: data.tittle,
+                        text: data.mensaje,
+                        type: data.type,
+                        confirmButtonText: 'Aceptar'
+                    })
+                }
+            });
+        })
+        
+    });
+    // Fin Add Asignatura
+
+    //Rellenar Modal Edit
+    function cap_datos(id, nom, desc){
+        $("#id").val(id)
+        $("#nom").val(nom)
+        $("#desc").val(desc)
+    }
+
+    //Edit Asignatura
+    $( document ).ready(function() {
+        $("#btn_edit").on("click",function () {
+            str = $('#form_edit').serialize();
+            id = id.value
+            console.log( id );
+            $.ajax({
+                type: "POST",
+                url: "/asig/edit/" + id,
+                data: str,
+                success: function(data) {
+                    if(data.type == 'error'){
+                        swal({
+                            title: data.tittle,
+                            text: data.mensaje,
+                            type: data.type,
+                            confirmButtonText: 'Aceptar'
+                        })
+                    }else {
+                        swal({
+                            title: data.tittle,
+                            text: data.mensaje,
+                            type: data.type,
+                            confirmButtonText: 'Aceptar'
+                        }).then((result) => {
+                                if (result.value) {
+                                    window.location.href = '/asig';
+                                }
+                            })
+                    }  
+                },
+                error: function(data) {
+                    swal({
+                        title: data.tittle,
+                        text: data.mensaje,
+                        type: data.type,
+                        confirmButtonText: 'Aceptar'
+                    })
+                }
+            });
+        })
+        //Fin Edit Asignatura                
+    });
+</script>
