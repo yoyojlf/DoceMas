@@ -1,442 +1,232 @@
-<!DOCTYPE html>
-<html> 
-    <head>
-        <meta charset="utf-8">
-        <title>DoceMas</title>
+{% extends 'base.html' %}
 
-        {% load static %}
+{% load static %}
 
-        <!-- Mobile Metas -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Google Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,700,800,900' rel='stylesheet' type='text/css'>
-        <!-- Library CSS -->
-        <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
-        <link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
-        <link rel="stylesheet" href="{% static "css/fonts/font-awesome/css/font-awesome.css" %}">
-        <link rel="stylesheet" href="{% static "css/animations.css" %}" media="screen">
-        <link rel="stylesheet" href="{% static "css/superfish.css" %}" media="screen">
-        <link rel="stylesheet" href="{% static "css/revolution-slider/css/settings.css" %}" media="screen">
-        <link rel="stylesheet" href="{% static "css/revolution-slider/css/extralayers.css" %}" media="screen">
-        <link rel="stylesheet" href="{% static "css/prettyPhoto.css" %}" media="screen">
-        <!-- Theme CSS -->
-        <link rel="stylesheet" href="{% static "css/style.css" %}">
-        <!-- Skin -->
-        <link rel="stylesheet" href="{% static "css/colors/green.css" %}" class="colors">
-        <!-- Responsive CSS -->
-        <link rel="stylesheet" href="{% static "css/theme-responsive.css" %}">
-        <!--sweetalert-->
-        <link rel="stylesheet" href="{% static "css/sweetalert2.min.css" %}" type="text/css">
-        <!-- Favicons -->
-        <link rel="shortcut icon" href="{% static "img/ico/favicon.ico" %}">
-        <link rel="apple-touch-icon" href="{% static "img/ico/apple-touch-icon.png" %}">
-        <link rel="apple-touch-icon" sizes="72x72" href="{% static "img/ico/apple-touch-icon-72.png" %}">
-        <link rel="apple-touch-icon" sizes="114x114" href="{% static "img/ico/apple-touch-icon-114.png" %}">
-        <link rel="apple-touch-icon" sizes="144x144" href="{% static "img/ico/apple-touch-icon-144.png" %}">
-    </head>
-    <body class="home">
-        <div class="page-mask">
-            <div class="page-loader">
-                <div class="spinner"></div>
-                Cargando...
+{% block title %}Administrador{% endblock %}
+
+{% block bar_nav %}{% include 'polls/nav_adm.html' %}{% endblock %}
+
+{% block section %}
+
+
+<!-- Main Section -->
+<section id="main">
+    <!-- Title, Breadcrumb -->
+    <div class="breadcrumb-wrapper">
+        <div class="pattern-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                        <h2 class="title">Mantenedor de Capacitaciones</h2>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Wrap -->
-        <div class="wrap">
-            <!-- Header -->
-            <header id="header">
-                <!-- Header Top Bar -->
-                <div class="top-bar">
-                    <div class="slidedown collapse">
-                        <div class="container">
-                            <div class="pull-left">
-                                <p>Bienvenido @usuario </p> 
-                            </div>
-                            <div class="phone-login pull-right">
-                                
-                                <a href="/." data-toggle="modal" data-target="#"><i class="fa fa-sign-in"></i> Cerrar Sesión</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Header Top Bar -->
-                <!-- Main Header -->
-                <div class="main-header">
-                    <div class="container">
-                        <!-- TopNav -->
-                        <div class="topnav navbar-header">
-                            <a class="navbar-toggle down-button" data-toggle="collapse" data-target=".slidedown">
-                            <i class="fa fa-angle-down icon-current"></i>
-                            </a> 
-                        </div>
-                        <!-- /TopNav-->
-                        <!-- Logo -->
-                        <div class="logo pull-left">
-                            <h1>
-                                <a href="/adm">
-                                <img class="" src="{% static "img/carrusel/logodocemas.png" %}" alt="DoceMas" width="160" height="60">
-                                </a>
-                            </h1>
-                        </div>
-                        <!-- /Logo -->
-                        {% include 'polls/nav_adm.html' %}
-                    </div>
-                </div>
-                <!-- /Main Header -->
-            </header>
-            <!-- /Header --> 
-            <!-- Main Section -->
-            <section id="main">
-                <!-- Title, Breadcrumb -->
-                <div class="breadcrumb-wrapper">
-                    <div class="pattern-overlay">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
-                                    <h2 class="title">Mantenedor de Capacitaciones</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Title, Breadcrumb -->
-                <!-- Main Content -->
-                <div class="content margin-bottom60">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12 col-md-12">
-                                <table class="shopping-cart-table table">
-                                    <tbody>
-                                        <tr>
-                                            <td class="action no-border">
-                                                <a class="update btn btn-color pull-left" href="#" data-toggle="modal" data-target="#add_cap"> Agregar Capacitación</a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="table-box">
-                                    <!-- shopping-cart-table -->
-                                    <table class="shopping-cart-table responsive-table table table-bordered table-striped" id="shopping-cart-table">
-                                        <thead>
-                                            <tr>
-                                                <th>Nombre</th>
-                                                <th>Descripción</th>
-                                                <th>Fecha</th>
-                                                <th>Hora</th>
-                                                <th>Dirección</th>
-                                                <th>Otec</th>
-                                                <th>Editar</th>
-                                                <th>Eliminar</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {% for elemento in capacitaciones %}
-                                                <tr id="datos">
-                                                    <td>{{elemento.nombre}}</td>
-                                                    <td>{{elemento.descripcion}}</td>
-                                                    <td>{{elemento.fecha}}</td>
-                                                    <td>{{elemento.hora}}</td>
-                                                    <td>{{elemento.direccion}}</td>
-                                                    <td>{{elemento.otec.nombre}}</td>
-                                                    <td>
-                                                        <!-- <a href="#" data-toggle="modal" data-target="#edit_nivel"><i class="fa fa-pencil"></i> Editar</a> -->
-                                                        <button type="button" data-toggle="modal" data-target="#edit_cap" onclick="cap_datos('{{elemento.id}}', '{{elemento.nombre}}', '{{elemento.descripcion}}', '{{elemento.fecha}}', '{{elemento.hora}}', '{{elemento.direccion}}', '{{elemento.otec.id}}' )"><i class="fa fa-pencil"></i> Editar</a></button>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"><i class="fa fa-trash-o"></i> Borrar</a>
-                                                    </td>
-                                                </tr>                                                
-                                            {% endfor %}
-                                        </tbody>
-                                    </table>
-                                    <!-- /shopping-cart-table -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Main Content -->
-            </section>
-            <!-- /Main Section -->
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 ">
-                            <p class="credits">&copy; Copyright 2018 by <a href="#">Franco Alvarado</a>. Todos los derechos reservados. </p>
-                        </div>
-                        
+    </div>
+    <!-- /Title, Breadcrumb -->
+    <!-- Main Content -->
+    <div class="content margin-bottom60">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <table class="shopping-cart-table table">
+                        <tbody>
+                            <tr>
+                                <td class="action no-border">
+                                    <a class="update btn btn-color pull-left" href="#" data-toggle="modal" data-target="#add_cap"> Agregar Capacitación</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-box">
+                        <!-- shopping-cart-table -->
+                        <table class="shopping-cart-table responsive-table table table-bordered table-striped" id="shopping-cart-table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Descripción</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Dirección</th>
+                                    <th>Otec</th>
+                                    <th>Editar</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for elemento in capacitaciones %}
+                                    <tr id="datos">
+                                        <td>{{elemento.nombre}}</td>
+                                        <td>{{elemento.descripcion}}</td>
+                                        <td>{{elemento.fecha}}</td>
+                                        <td>{{elemento.hora}}</td>
+                                        <td>{{elemento.direccion}}</td>
+                                        <td>{{elemento.otec.nombre}}</td>
+                                        <td>
+                                            <!-- <a href="#" data-toggle="modal" data-target="#edit_nivel"><i class="fa fa-pencil"></i> Editar</a> -->
+                                            <button type="button" data-toggle="modal" data-target="#edit_cap" onclick="cap_datos('{{elemento.id}}', '{{elemento.nombre}}', '{{elemento.descripcion}}', '{{elemento.fecha}}', '{{elemento.hora}}', '{{elemento.direccion}}', '{{elemento.otec.id}}' )"><i class="fa fa-pencil"></i> Editar</a></button>
+                                        </td>
+                                        <td>
+                                            <a href="#"><i class="fa fa-trash-o"></i> Borrar</a>
+                                        </td>
+                                    </tr>                                                
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!-- /shopping-cart-table -->
                     </div>
                 </div>
             </div>
-            <!-- Modals -->
-            <section id="modals">
-                <!-- Agrega Capacitación Modal -->
-                <div class="modal register fade" id="add_cap" tabindex="-1" role="dialog" aria-labelledby="registrationModal" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h2 class="form-signin-heading modal-title" id="registrationModalLabel">Registro de Capacitación</h2>
+        </div>
+    </div>
+    <!-- /Main Content -->
+</section>
+<!-- /Main Section -->
+
+<!-- Modals -->
+<section id="modals">
+    <!-- Agrega Capacitación Modal -->
+    <div class="modal register fade" id="add_cap" tabindex="-1" role="dialog" aria-labelledby="registrationModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="form-signin-heading modal-title" id="registrationModalLabel">Registro de Capacitación</h2>
+                </div>
+                <form id="form_add" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}  
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="text" value="" name="nombre" class="form-control" placeholder="Nombre">
+                                </div>
                             </div>
-                            <form id="form_add" method="POST" enctype="multipart/form-data">
-                                {% csrf_token %}  
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="col-md-12">
-                                                <input type="text" value="" name="nombre" class="form-control" placeholder="Nombre">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="col-md-12">
-                                                <input type="text" value="" name="descrip" class="form-control" placeholder="Descripción">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="col-md-12">
-                                                <input type="date" value="" name="fecha" class="form-control" placeholder="Fecha de Capacitación">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="col-md-12">
-                                                <input type="text" value="" name="hora" class="form-control" placeholder="Hora de Capacitación">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="col-md-12">
-                                                <input type="text" value="" name="direccion" class="form-control" placeholder="Dirección">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="col-md-12">
-                                                <select id="otec"name="otec" type="text" placeholder="Seleccionar Otec" class="form-control input-md">
-                                                    <option value="0">Seleccionar Otec</option>  
-                                                    {% for elemento in otecs %}
-                                                        <option value="{{elemento.id}}">{{elemento.nombre}}</option>                                           
-                                                    {% endfor %}
-                                                </select>   
-                                            </div>
-                                        </div>
-                                    </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="text" value="" name="descrip" class="form-control" placeholder="Descripción">
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                    <button id="btn_add" type="button" class="btn btn-color">Agregar Capacitación</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="date" value="" name="fecha" class="form-control" placeholder="Fecha de Capacitación">
                                 </div>
-                            </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="text" value="" name="hora" class="form-control" placeholder="Hora de Capacitación">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="text" value="" name="direccion" class="form-control" placeholder="Dirección">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <select id="otec"name="otec" type="text" placeholder="Seleccionar Otec" class="form-control input-md">
+                                        <option value="0">Seleccionar Otec</option>  
+                                        {% for elemento in otecs %}
+                                            <option value="{{elemento.id}}">{{elemento.nombre}}</option>                                           
+                                        {% endfor %}
+                                    </select>   
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button id="btn_add" type="button" class="btn btn-color">Agregar Capacitación</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /Agrega Capacitación Modal -->
+    <!-- Edita Capacitación Modal -->
+    <div class="modal register fade" id="edit_cap" tabindex="-1" role="dialog" aria-labelledby="registrationModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="form-signin-heading modal-title" id="registrationModalLabel">Editar Capacitación</h2>
                 </div>
-                <!-- /Agrega Capacitación Modal -->
-                <!-- Edita Capacitación Modal -->
-                <div class="modal register fade" id="edit_cap" tabindex="-1" role="dialog" aria-labelledby="registrationModal" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h2 class="form-signin-heading modal-title" id="registrationModalLabel">Editar Capacitación</h2>
+                <form id="form_edit" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}  
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input id="nom" type="text" value="" name="nombre" class="form-control" placeholder="Nombre">
+                                </div>
                             </div>
-                            <form id="form_edit" method="POST" enctype="multipart/form-data">
-                                {% csrf_token %}  
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="col-md-12">
-                                                <input id="nom" type="text" value="" name="nombre" class="form-control" placeholder="Nombre">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="col-md-12">
-                                                <input id="desc" type="text" value="" name="descrip" class="form-control" placeholder="Descripción">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="col-md-12">
-                                                <input id="fec" type="date" value="" name="fecha" class="form-control" placeholder="Fecha de Capacitación">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="col-md-12">
-                                                <input id="hora" type="text" value="" name="hora" class="form-control" placeholder="Hora de Capacitación">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="col-md-12">
-                                                <input id="dir" type="text" value="" name="direccion" class="form-control" placeholder="Dirección">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="col-md-12">
-                                                <select id="otec"name="otec" type="text" placeholder="Seleccionar Otec" class="form-control input-md" required="">
-                                                    {% for elemento in otecs %}
-                                                        <option value="{{elemento.id}}">{{elemento.nombre}}</option>                                           
-                                                    {% endfor %}
-                                                </select>   
-                                            </div>
-                                        </div>
-                                    </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input id="desc" type="text" value="" name="descrip" class="form-control" placeholder="Descripción">
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                    <button id="btn_edit" type="button" class="btn btn-color">Editar Capacitación</button>
-                                    <input type="hidden" name="id" id="id">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input id="fec" type="date" value="" name="fecha" class="form-control" placeholder="Fecha de Capacitación">
                                 </div>
-                            </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input id="hora" type="text" value="" name="hora" class="form-control" placeholder="Hora de Capacitación">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input id="dir" type="text" value="" name="direccion" class="form-control" placeholder="Dirección">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <select id="otec"name="otec" type="text" placeholder="Seleccionar Otec" class="form-control input-md" required="">
+                                        {% for elemento in otecs %}
+                                            <option value="{{elemento.id}}">{{elemento.nombre}}</option>                                           
+                                        {% endfor %}
+                                    </select>   
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- /Edita Usuario Modal -->
-            </section>
-            <!-- /Modals -->
-        <!-- The Scripts -->
-        <script src="{% static "js/jquery.min.js" %}"></script>
-        <script src="{% static "js/jquery-migrate-1.0.0.js" %}"></script>
-        <script src="{% static "js/jquery-ui.js" %}"></script>
-        <script src="{% static "js/bootstrap.js" %}"></script>
-        <script src="{% static "js/revolution-slider/js/jquery.themepunch.plugins.min.js" %}"></script> 
-        <script src="{% static "js/revolution-slider/js/jquery.themepunch.revolution.min.js" %}"></script>
-        <script src="{% static "js/jquery.parallax.js" %}"></script>
-        <script src="{% static "js/jquery.wait.js" %}"></script>
-        <script src="{% static "js/fappear.js" %}"></script> 
-        <script src="{% static "js/modernizr-2.6.2.min.js" %}"></script>
-        <script src="{% static "js/jquery.bxslider.min.js" %}"></script>
-        <script src="{% static "js/jquery.prettyPhoto.js" %}"></script>
-        <script src="{% static "js/superfish.js" %}"></script>
-        <script src="{% static "js/tweetMachine.js" %}"></script>
-        <script src="{% static "js/tytabs.js" %}"></script>
-        <script src="{% static "js/jquery.gmap.min.js" %}"></script>
-        <script src="{% static "js/jquery.sticky.js" %}"></script>
-        <script src="{% static "js/jquery.countTo.js" %}"></script>
-        <script src="{% static "js/jflickrfeed.js" %}"></script>
-        <script src="{% static "js/imagesloaded.pkgd.min.js" %}"></script>
-        <script src="{% static "js/waypoints.min.js" %}"></script>
-        <script src="{% static "js/wow.js" %}"></script>
-        <script src="{% static "js/jquery.fitvids.js" %}"></script>
-        <script src="{% static "js/custom.js" %}"></script>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button id="btn_edit" type="button" class="btn btn-color">Editar Capacitación</button>
+                        <input type="hidden" name="id" id="id">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /Edita Usuario Modal -->
+</section>
+<!-- /Modals -->
 
-        <script src="{% static "js/sweetalert2.min.js" %}"></script>
-
-        <script type="text/javascript">
-
-            //Add CAPACITACION
-            $( document ).ready(function() {
-                $("#btn_add").on("click",function () {
-                    $.ajax({
-                        type: "POST",
-                        url: "/capac/add",
-                        data: $('#form_add').serialize(),
-                        success: function(data) {
-                            if(data.type == 'error'){
-                                swal({
-                                    title: data.tittle,
-                                    text: data.mensaje,
-                                    type: data.type,
-                                    confirmButtonText: 'Aceptar'
-                                })
-                            }else {
-                                swal({
-                                    title: data.tittle,
-                                    text: data.mensaje,
-                                    type: data.type,
-                                    confirmButtonText: 'Aceptar'
-                                }).then((result) => {
-                                        if (result.value) {
-                                            window.location.href = '/capac';
-                                        }
-                                    })
-                            }                        
-                        },
-                        error: function(data) {
-                            swal({
-                                title: data.tittle,
-                                text: data.mensaje,
-                                type: data.type,
-                                confirmButtonText: 'Aceptar'
-                            })
-                        }
-                    });
-                })
-                
-            });
-            //Fin Add CAPACITACION
-
-            //Captura datos y Rellenar Modal Edit
-            function cap_datos(id, nom, desc, fec, hora, dir, otec){
-                $("#id").val(id)
-                $("#nom").val(nom)
-                $("#desc").val(desc)
-                $("#fec").val(fec)
-                $("#hora").val(hora)
-                $("#dir").val(dir)
-                $("#otec").val(otec)
-            }
-
-            //Edit CAPACITACION
-            $( document ).ready(function() {
-                $("#btn_edit").on("click",function () {
-                    str = $('#form_edit').serialize();
-                    id = id.value
-                    console.log( id );
-                    $.ajax({
-                        type: "POST",
-                        url: "/capac/edit/" + id,
-                        data: str,
-                        success: function(data) {
-                            if(data.type == 'error'){
-                                swal({
-                                    title: data.tittle,
-                                    text: data.mensaje,
-                                    type: data.type,
-                                    confirmButtonText: 'Aceptar'
-                                })
-                            }else {
-                                swal({
-                                    title: data.tittle,
-                                    text: data.mensaje,
-                                    type: data.type,
-                                    confirmButtonText: 'Aceptar'
-                                }).then((result) => {
-                                        if (result.value) {
-                                            window.location.href = '/capac';
-                                        }
-                                    })
-                            }  
-                        },
-                        error: function(data) {
-                            swal({
-                                title: data.tittle,
-                                text: data.mensaje,
-                                type: data.type,
-                                confirmButtonText: 'Aceptar'
-                            })
-                        }
-                    });
-                })
-            });
-            //Fin Edit CAPACITACION
-        </script>
+{% block scripts %}
         
-    </body>
-</html>
+{% include 'polls/capacitacion.html' %}
+
+{% endblock %}
+        
+{% endblock %}
 

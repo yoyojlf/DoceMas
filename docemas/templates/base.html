@@ -26,6 +26,8 @@
         <link rel="stylesheet" href="{% static "css/colors/green.css" %}" class="colors">
         <!-- Responsive CSS -->
         <link rel="stylesheet" href="{% static "css/theme-responsive.css" %}">
+        <!--sweetalert-->
+        <link rel="stylesheet" href="{% static "css/sweetalert2.min.css" %}" type="text/css">
         <!-- Favicons -->
         <link rel="shortcut icon" href="{% static "img/ico/favicon.ico" %}">
         <link rel="apple-touch-icon" href="{% static "img/ico/apple-touch-icon.png" %}">
@@ -199,7 +201,7 @@
                 <!-- /Registration Modal -->
             </section>
             <!-- Scroll To Top -->
-            <a href="#" class="scrollup"><i class="fa fa-angle-up" %}"></i></a>
+            <a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a>
         </div>
         <!-- /Wrap -->
         <!-- The Scripts -->
@@ -227,6 +229,10 @@
         <script src="{% static "js/wow.js" %}"></script>
         <script src="{% static "js/jquery.fitvids.js" %}"></script>
         <script src="{% static "js/custom.js" %}"></script>
+
+        <script src="{% static "js/sweetalert2.min.js" %}"></script>
+
+        {% block scripts %}{% endblock %}
     </body>
 </html>
 
