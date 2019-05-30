@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ hilo.titulo }}
+{% endblock %}
+
+{% block section %}
+    <h1>{{ hilo.titulo }}</h1>
+    <br>
+
+    <p>Autor: {{ hilo.owner.username }}</p>
+    <br>
+    <p>Descripcion: {{ hilo.descripcion }}</p>
+    <br>
+    {% for re in rehilo %}
+        <br>
+        <h2>{{ re.titulo }}</h2>
+        <p>Autor: {{ re.owner.username }} >-> {{ re.descripcion }}</p>
+        <br>
+    {% endfor %}
+
+    {% if success_message %}
+        <hr>
+        <p>{{success_message}}</p>
+        <hr>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <button class="btn btn-color">Agregar ReHilo</button>
+        </div>
+    </form>
+
+{% endblock %}
+
