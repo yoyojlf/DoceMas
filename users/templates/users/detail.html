@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ usuario.username }}
+{% endblock %}
+
+{% block section %}
+    <h1>{{ usuario.username }}</h1>
+    <p>Nombre de usuario: {{ usuario.username }}</p>
+    <p>Password: {{ usuario.password }}</p>
+    <p>Nombre: {{ usuario.first_name }} {{ usuario.last_name }}</p>
+    <p>Activo: {{ usuario.is_active }}</p>
+
+
+{% endblock %}

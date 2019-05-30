@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'docemas',
     'polls',
     'users',
+    'foro',
 ]
 
 MIDDLEWARE = [

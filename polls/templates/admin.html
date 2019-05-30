@@ -1,92 +1,14 @@
-<!DOCTYPE html>
-<html> 
-    <head>
-        <meta charset="utf-8">
-        <title>DoceMas</title>
+{% extends 'base.html' %}
 
-        {% load static %}
+{% load static %}
 
-        <!-- Mobile Metas -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Google Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,700,800,900' rel='stylesheet' type='text/css'>
-        <!-- Library CSS -->
-        <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
-        <link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
-        <link rel="stylesheet" href="{% static "css/fonts/font-awesome/css/font-awesome.css" %}">
-        <link rel="stylesheet" href="{% static "css/animations.css" %}" media="screen">
-        <link rel="stylesheet" href="{% static "css/superfish.css" %}" media="screen">
-        <link rel="stylesheet" href="{% static "css/revolution-slider/css/settings.css" %}" media="screen">
-        <link rel="stylesheet" href="{% static "css/revolution-slider/css/extralayers.css" %}" media="screen">
-        <link rel="stylesheet" href="{% static "css/prettyPhoto.css" %}" media="screen">
-        <!-- Theme CSS -->
-        <link rel="stylesheet" href="{% static "css/style.css" %}">
-        <!-- Skin -->
-        <link rel="stylesheet" href="{% static "css/colors/green.css" %}" class="colors">
-        <!-- Responsive CSS -->
-        <link rel="stylesheet" href="{% static "css/theme-responsive.css" %}">
-        <!-- Favicons -->
-        <link rel="shortcut icon" href="{% static "img/ico/favicon.ico" %}">
-        <link rel="apple-touch-icon" href="{% static "img/ico/apple-touch-icon.png" %}">
-        <link rel="apple-touch-icon" sizes="72x72" href="{% static "img/ico/apple-touch-icon-72.png" %}">
-        <link rel="apple-touch-icon" sizes="114x114" href="{% static "img/ico/apple-touch-icon-114.png" %}">
-        <link rel="apple-touch-icon" sizes="144x144" href="{% static "img/ico/apple-touch-icon-144.png" %}">
-    </head>
-    <body class="home">
-        <div class="page-mask">
-            <div class="page-loader">
-                <div class="spinner"></div>
-                Cargando...
-            </div>
-        </div>
-        <!-- Wrap -->
-        <div class="wrap">
-            <!-- Header -->
-            <header id="header">
-                <!-- Header Top Bar -->
-                <div class="top-bar">
-                    <div class="slidedown collapse">
-                        <div class="container">
-                            <div class="pull-left">
-                                <p>Bienvenido @usuario </p> 
-                            </div>
-                            <div class="phone-login pull-right">
-                                
-                                <a href="/." data-toggle="modal" data-target="#"><i class="fa fa-sign-in"></i> Cerrar Sesión</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Header Top Bar -->
-                <!-- Main Header -->
-                <div class="main-header">
-                    <div class="container">
-                        <!-- TopNav -->
-                        <div class="topnav navbar-header">
-                            <a class="navbar-toggle down-button" data-toggle="collapse" data-target=".slidedown">
-                            <i class="fa fa-angle-down icon-current"></i>
-                            </a> 
-                        </div>
-                        <!-- /TopNav-->
-                        <!-- Logo -->
-                        <div class="logo pull-left">
-                            <h1>
-                                <a href="/adm">
-                                <img class="" src="{% static "img/carrusel/logodocemas.png" %}" alt="DoceMas" width="160" height="60">
-                                </a>
-                            </h1>
-                        </div>
-                        <!-- /Logo -->
+{% block title %}Administrador{% endblock %}
 
-                        {% include 'polls/nav_adm.html' %}
+{% block bar_nav %}{% include 'polls/nav_adm.html' %}{% endblock %}
 
-                    </div>
-                </div>
-                <!-- /Main Header -->
-            </header>
-            <!-- /Header --> 
+{% block section %}
+
+
             <!-- Services -->
             <div id="services" class="margin-top80">
                 <div class="pattern-overlay">
@@ -245,44 +167,5 @@
                     </div>
                 </div>
             </div>
-            <!-- /Services --> 
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 ">
-                            <p class="credits">&copy; Copyright 2018 by <a href="#">Franco Alvarado</a>. Todos los derechos reservados. </p>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-            
-        <!-- The Scripts -->
-        <script src="{% static "js/jquery.min.js" %}"></script>
-        <script src="{% static "js/jquery-migrate-1.0.0.js" %}"></script>
-        <script src="{% static "js/jquery-ui.js" %}"></script>
-        <script src="{% static "js/bootstrap.js" %}"></script>
-        <script src="{% static "js/revolution-slider/js/jquery.themepunch.plugins.min.js" %}"></script> 
-        <script src="{% static "js/revolution-slider/js/jquery.themepunch.revolution.min.js" %}"></script>
-        <script src="{% static "js/jquery.parallax.js" %}"></script>
-        <script src="{% static "js/jquery.wait.js" %}"></script>
-        <script src="{% static "js/fappear.js" %}"></script> 
-        <script src="{% static "js/modernizr-2.6.2.min.js" %}"></script>
-        <script src="{% static "js/jquery.bxslider.min.js" %}"></script>
-        <script src="{% static "js/jquery.prettyPhoto.js" %}"></script>
-        <script src="{% static "js/superfish.js" %}"></script>
-        <script src="{% static "js/tweetMachine.js" %}"></script>
-        <script src="{% static "js/tytabs.js" %}"></script>
-        <script src="{% static "js/jquery.gmap.min.js" %}"></script>
-        <script src="{% static "js/jquery.sticky.js" %}"></script>
-        <script src="{% static "js/jquery.countTo.js" %}"></script>
-        <script src="{% static "js/jflickrfeed.js" %}"></script>
-        <script src="{% static "js/imagesloaded.pkgd.min.js" %}"></script>
-        <script src="{% static "js/waypoints.min.js" %}"></script>
-        <script src="{% static "js/wow.js" %}"></script>
-        <script src="{% static "js/jquery.fitvids.js" %}"></script>
-        <script src="{% static "js/custom.js" %}"></script>
-    </body>
-</html>
-
+            <!-- /Services -->
+{% endblock %}
