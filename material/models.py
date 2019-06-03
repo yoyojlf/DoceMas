@@ -10,7 +10,7 @@ from django.db.models.fields.files import forms
 
 class TypeDocument(models.Model):
     titulo = models.CharField(max_length=50,blank=True)
-    descripcion = models.CharField(max_length=500,blank=True)
+    descripcion = models.CharField(max_length=50,blank=True)
     
     def __str__(self):
         return self.titulo
@@ -23,7 +23,7 @@ class Document(models.Model):
     titulo = models.CharField(max_length=50,blank=True)
     descripcion = models.CharField(max_length=500,blank=True)
     fecha = models.DateTimeField(auto_now_add=True)
-    archivo = forms.FileField(required=False)
+    archivo = models.FileField(upload_to='material/')
     estado = models.BooleanField(default=True)
     visibility = models.CharField(max_length=3,choices=VISIBILITY, default=PUBLIC)
     

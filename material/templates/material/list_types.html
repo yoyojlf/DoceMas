@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %}Tipo de Material{% endblock %}
+
+{%block section %}
+
+<!-- Title, Breadcrumb -->
+<div class="breadcrumb-wrapper">
+    <div class="pattern-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                    <h2 class="title">Mantenedor de Tipo Documento</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Title, Breadcrumb -->
+    
+<!-- Main Content -->
+<div class="content margin-bottom60">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <table class="shopping-cart-table table">
+                        <tbody>
+                            <tr>
+                                <td class="action no-border">
+                                    <a class="update btn btn-color pull-left" href="{% url 'create_type' %}" > Agregar Tipo Documento</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-box">
+                        <!-- shopping-cart-table -->
+                        <table class="shopping-cart-table responsive-table table table-bordered table-striped" id="shopping-cart-table">
+                            <thead>
+                                <tr>
+                                    <th>Titulo</th>
+                                    <th>Descripción</th>
+                                    <th>Editar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for type in types_list %}
+                                    <tr id="datos">
+                                        <td>{{type.titulo}}</td>    
+                                        <td>{{type.descripcion}}</td>    
+                                        <td>
+                                            
+                                            <a href="{% url 'edit_type' pk=type.pk %}" ><i class="fa fa-pencil"></i> Editar</a>
+                                        </td>    
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!-- /shopping-cart-table -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Main Content -->
+
+    
+    
+{% endblock %}
+

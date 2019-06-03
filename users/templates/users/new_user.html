@@ -36,7 +36,11 @@
     </form>
     {% endif%}
 
+    {% block scripts %}
+        
+    {% include 'user/user.html' %}
     
+    {% endblock %}    
 
 {% endblock %}
 

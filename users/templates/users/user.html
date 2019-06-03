@@ -1,0 +1,44 @@
+<script type="text/javascript">
+
+    //Add USER
+    $( document ).ready(function() {
+        $("#btn_add").on("click",function () {
+            $.ajax({
+                type: "POST",
+                url: "/adm/new_user",
+                data: $('#form_add').serialize(),
+                success: function(data) {
+                    if(data.type == 'error'){
+                        swal({
+                            title: data.tittle,
+                            text: data.mensaje,
+                            type: data.type,
+                            confirmButtonText: 'Aceptar'
+                        })
+                    }else {
+                        swal({
+                            title: data.tittle,
+                            text: data.mensaje,
+                            type: data.type,
+                            confirmButtonText: 'Aceptar'
+                        }).then((result) => {
+                                if (result.value) {
+                                    window.location.href = '/adm/users';
+                                }
+                            })
+                    }                        
+                },
+                error: function(data) {
+                    swal({
+                        title: data.tittle,
+                        text: data.mensaje,
+                        type: data.type,
+                        confirmButtonText: 'Aceptar'
+                    })
+                }
+            });
+        })
+        
+    });
+    //Fin Add USER
+</script>

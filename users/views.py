@@ -143,7 +143,7 @@ class Create(View):
             return JsonResponse(data) 
         else:
             data = { 
-                'mensaje': 'El usuario fue registrado correctamente.', 
+                'mensaje': 'El usuario no se pudo registrar.', 
                 'type' : 'error', 
                 'tittle': 'Registro Usuario' 
             } 
@@ -165,26 +165,6 @@ class ListUsersView(View):
         }
         return render(request,"users/list_users.html", context)
 
-<<<<<<< HEAD
-class Edit_user(View):
-    #@method_decorator(login_required())
-    def get(self,request, pk):
-        """
-        esto cmuestra un formulario para crear una foto
-        :param request:
-        :return:
-        """
-
-        form = UsuarioForm()
-        context = {
-            'form': form,
-            'success_message': ''
-        }
-        return render(request, 'users/edit_user.html', context)
-
-    #@method_decorator(login_required())
-    def post(self,request, pk):
-=======
 #vista para visualizar el detalle de un usuario
 class UserDetailView(View, UsersQueryset):
     def get(self,request,pk):
@@ -228,34 +208,11 @@ class UserEditView(View, UsersQueryset):
             return response.HttpResponseNotFound('No existe el usuario')#error 404
 
     def post(self,request,pk):
->>>>>>> master
         """
         esto cmuestra un formulario para crear una foto y la crea
         :param request:
         :return:
         """
-<<<<<<< HEAD
-        
-        success_message = ''
-        usuario =  Usuario.objects.get(pk=pk)[0]
-        if request.method == "POST":
-            form = UsuarioForm(request.POST, instance=usuario)
-            if form.is_valid():
-                usuario = form.save(commit=False)
-                    
-                usuario.save()
-                success_message = 'Usuario guardado con éxito'
-            else:
-                success_message = 'Informacion no valida'
-                context = {
-                    'form': form,
-                    'success_message': success_message
-                }
-                return render(request, 'users/edit_user.html', context)
-        else:
-            form = UsuarioForm(instance=usuario)
-            return render(request, 'users/edit_user.html', {'form': form})
-=======
 
         success_message = ''
         possible_users = self.get_users_queryset(request).filter(pk=pk)#.select_related('owner')
@@ -274,4 +231,3 @@ class UserEditView(View, UsersQueryset):
             }
             return render(request, 'users/update_user.html', context)
 
->>>>>>> master

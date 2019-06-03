@@ -210,11 +210,7 @@
                 <!-- /Registration Modal -->
             </section>
             <!-- Scroll To Top -->
-<<<<<<< HEAD
-            <a href="#" class="scrollup"><i class="fa fa-angle-up" ></i></a>
-=======
             <a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a>
->>>>>>> yoyo
         </div>
         <!-- /Wrap -->
         <!-- The Scripts -->
@@ -245,54 +241,7 @@
 
         <script src="{% static "js/sweetalert2.min.js" %}"></script>
 
-<<<<<<< HEAD
-        <script type="text/javascript">
-
-            //Add USER
-            $( document ).ready(function() {
-                $("#btn_add").on("click",function () {
-                    $.ajax({
-                        type: "POST",
-                        url: "/adm/new_user",
-                        data: $('#form_add').serialize(),
-                        success: function(data) {
-                            if(data.type == 'error'){
-                                swal({
-                                    title: data.tittle,
-                                    text: data.mensaje,
-                                    type: data.type,
-                                    confirmButtonText: 'Aceptar'
-                                })
-                            }else {
-                                swal({
-                                    title: data.tittle,
-                                    text: data.mensaje,
-                                    type: data.type,
-                                    confirmButtonText: 'Aceptar'
-                                }).then((result) => {
-                                        if (result.value) {
-                                            window.location.href = '/adm/users';
-                                        }
-                                    })
-                            }                        
-                        },
-                        error: function(data) {
-                            swal({
-                                title: data.tittle,
-                                text: data.mensaje,
-                                type: data.type,
-                                confirmButtonText: 'Aceptar'
-                            })
-                        }
-                    });
-                })
-                
-            });
-            //Fin Add USER
-        </script>
-=======
         {% block scripts %}{% endblock %}
->>>>>>> yoyo
     </body>
 </html>
 

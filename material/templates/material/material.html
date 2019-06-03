@@ -1,0 +1,84 @@
+<script type="text/javascript">
+
+    //Add Material
+    $( document ).ready(function() {
+        $("#btn_add").on("click",function () {
+            $.ajax({
+                type: "POST",
+                url: "/docum/new_document",
+                data: $('#form_add').serialize(),
+                success: function(data) {
+                    if(data.type == 'error'){
+                        swal({
+                            title: data.tittle,
+                            text: data.mensaje,
+                            type: data.type,
+                            confirmButtonText: 'Aceptar'
+                        })
+                    }else {
+                        swal({
+                            title: data.tittle,
+                            text: data.mensaje,
+                            type: data.type,
+                            confirmButtonText: 'Aceptar'
+                        }).then((result) => {
+                                if (result.value) {
+                                    window.location.href = '/docum/all';
+                                }
+                            })
+                    }                        
+                },
+                error: function(data) {
+                    swal({
+                        title: data.tittle,
+                        text: data.mensaje,
+                        type: data.type,
+                        confirmButtonText: 'Aceptar'
+                    })
+                }
+            });
+        })
+        
+    });
+    //Fin Add Material
+
+    //Edit Material
+    $("#btn_edit").on("click",function () {
+        str = $('#form_edit').serialize();
+        $.ajax({
+            type: "POST",
+            url: "/type/" + '{{id}}',
+            data: str,
+            success: function(data) {
+                if(data.type == 'error'){
+                    swal({
+                        title: data.tittle,
+                        text: data.mensaje,
+                        type: data.type,
+                        confirmButtonText: 'Aceptar'
+                    })
+                }else {
+                    swal({
+                        title: data.tittle,
+                        text: data.mensaje,
+                        type: data.type,
+                        confirmButtonText: 'Aceptar'
+                    }).then((result) => {
+                            if (result.value) {
+                                window.location.href = '/docum/all';
+                            }
+                        })
+                }  
+            },
+            error: function(data) {
+                swal({
+                    title: data.tittle,
+                    text: data.mensaje,
+                    type: data.type,
+                    confirmButtonText: 'Aceptar'
+                })
+            }
+        });
+    })
+    //Fin Edit Material
+</script>

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'users',
     'foro',
     'material',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +144,5 @@ DEFAULT_VISIBILITY = (
 )
 
 VISIBILITY = getattr(settings, 'VISIBILITY', DEFAULT_VISIBILITY)
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
