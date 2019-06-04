@@ -5,6 +5,7 @@ from polls.models import Asignatura
 from polls.models import Nivel
 from django.db.models.fields.files import forms
 
+from material.validators import valid_extension
 
 # Create your models here.
 
@@ -23,7 +24,7 @@ class Document(models.Model):
     titulo = models.CharField(max_length=50,blank=True)
     descripcion = models.CharField(max_length=500,blank=True)
     fecha = models.DateTimeField(auto_now_add=True)
-    archivo = models.FileField(upload_to='material/')
+    archivo = models.FileField(upload_to='material/', validators=[valid_extension])
     estado = models.BooleanField(default=True)
     visibility = models.CharField(max_length=3,choices=VISIBILITY, default=PUBLIC)
     
