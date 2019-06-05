@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 
+#import rutas para rutas de los archivos
+from django.conf import settings
+from django.conf.urls.static import static
+
 from users.views import Create as CreateUser, ListUsersView, LoginView, LogoutView, UserDetailView, UserEditView
 from foro.views import CreateHilo, ListHilosView, CreateReHilo, HiloDetailView
 from material.views import CreateTypeDocument, ListTypesView, TypeEditView, CreateDocument, ListDocumentsView, DocumentEditView
@@ -54,4 +58,4 @@ urlpatterns = [
     #Login Logout
     url(r'^login$', LoginView.as_view(), name='users_login'), #url normal basada en clase
     url(r'^logout$', LogoutView.as_view(), name='users_logout'), #url normal basada en clase
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

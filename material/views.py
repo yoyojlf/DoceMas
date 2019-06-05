@@ -151,21 +151,29 @@ class CreateDocument(View):
 
     #@method_decorator(login_required())
     def post(self,request):
-
-        form = DocumentForm(request.POST)
-        if form.is_valid():
-            
-            new_document = form.save()
-            
+        try:
+            form = DocumentForm(request.POST or None, request.FILES or None)
+            if form.is_valid():
+                
+                new_document = form.save(commit=False)
+                new_document.save()
+                
+                data = { 
+                    'mensaje': 'El Material fue registrado correctamente.', 
+                    'type' : 'success', 
+                    'tittle': 'Registro Material' 
+                } 
+                return JsonResponse(data) 
+            else:
+                data = { 
+                    'mensaje': 'El Material no se pudo registrar!.', 
+                    'type' : 'error', 
+                    'tittle': 'Registro Material' 
+                } 
+                return JsonResponse(data) 
+        except Exception as e:
             data = { 
-                'mensaje': 'El Material fue registrado correctamente.', 
-                'type' : 'success', 
-                'tittle': 'Registro Material' 
-            } 
-            return JsonResponse(data) 
-        else:
-            data = { 
-                'mensaje': 'El Material no se pudo registrar!.', 
+                'mensaje': 'Error, ' + str(e) , 
                 'type' : 'error', 
                 'tittle': 'Registro Material' 
             } 

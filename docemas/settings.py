@@ -129,8 +129,14 @@ LOGIN_URL = '/login'#cuando un usuario no esta autenticado, le redirige a /login
 
 STATIC_URL = '/static/'
 
+STATICFILE_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_doc")
+
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_doc')
 
 # -*- coding: utf-8 -*-
 from django.conf import settings

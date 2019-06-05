@@ -45,6 +45,7 @@
                                     <th>Nivel</th>
                                     <th>Asignatura</th>
                                     <th>Tipo Documento</th>
+                                    <th>Documento</th>
                                     <th>Editar</th>
                                 </tr>
                             </thead>
@@ -58,9 +59,10 @@
                                         <td>{{doc.visibility}}</td>    
                                         <td>{{doc.nivel.nombre}}</td>    
                                         <td>{{doc.asignatura.nombre}}</td>    
-                                        <td>{{doc.typeDocument.titulo}}</td>    
+                                        <td>{{doc.typeDocument.titulo}}</td>  
+                                        <td><a href="{{doc.archivo}}">{{doc.titulo}}</a></td>    
                                         <td>
-                                            <!--<a href="{% url 'edit_type' pk=type.pk %}" ><i class="fa fa-pencil"></i> Editar</a>-->
+                                            
                                             <a href="{% url 'edit_document' pk=doc.pk %}" ><i class="fa fa-pencil"></i> Editar</a>
                                         </td>    
                                     </tr>
