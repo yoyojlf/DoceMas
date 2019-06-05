@@ -7,7 +7,7 @@
 
     {% for hilo in hilos_list %}
     <br>
-        <p>{{hilo.titulo}} | {{hilo.pk}}</p>
+        <p>{{hilo.titulo}} | {{hilo.pk}} | {{hilo.fecha}}</p>
         <p>Autor: {{hilo.owner.username}} |<a href="{% url 'hilo_detail' hilo.pk %}">Detail</a></p>
 
     <br>
