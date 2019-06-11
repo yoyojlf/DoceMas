@@ -15,7 +15,7 @@ class HiloForm(forms.ModelForm):
 class ReHiloForm(forms.ModelForm):
     class Meta:
         model = ReHilo
-        exclude = ['at_hilo', 'titulo']
+        exclude = ['at_hilo', 'titulo', 'owner', ]
         widgets = {
             'descripcion': forms.Textarea,
         }

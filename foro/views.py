@@ -17,6 +17,7 @@ from foro.forms import HiloForm, ReHiloForm
 class CreateHilo(View):
 
     #@method_decorator(login_required())
+    @method_decorator(login_required())
     def get(self,request):
         """
         esto cmuestra un formulario para crear una foto
@@ -31,6 +32,7 @@ class CreateHilo(View):
         return render(request, 'foro/add_hilo.html', context)
 
     #@method_decorator(login_required())
+    @method_decorator(login_required())
     def post(self,request):
         """
         esto cmuestra un formulario para crear una foto y la crea
@@ -40,7 +42,10 @@ class CreateHilo(View):
 
         success_message = ''
 
+        owner = request.user
         form = HiloForm(request.POST)
+        form.owner = owner
+
         if form.is_valid():
             new_user = form.save()
             #form = PhotoForm()
@@ -58,6 +63,7 @@ class CreateHilo(View):
 class CreateReHilo(View):
 
     #@method_decorator(login_required())
+    @method_decorator(login_required())
     def get(self,request):
         """
         esto cmuestra un formulario para crear una foto
@@ -72,6 +78,7 @@ class CreateReHilo(View):
         return render(request, 'foro/add_rehilo.html', context)
 
     #@method_decorator(login_required())
+    @method_decorator(login_required())
     def post(self,request):
         """
         esto cmuestra un formulario para crear una foto y la crea
@@ -80,8 +87,11 @@ class CreateReHilo(View):
         """
 
         success_message = ''
+        re_with_owner = ReHilo()
+        re_with_owner.owner = request.user
 
-        form = ReHiloForm(request.POST)
+        form = ReHiloForm(request.POST, instance=re_with_owner)
+
         if form.is_valid():
             new_user = form.save()
             #form = PhotoForm()
@@ -112,6 +122,7 @@ class HilosQueryset(object):
 
 #ojo esta vista es solo en caracter de prueba luego hay que modificarla para llevarla a producción
 class ListHilosView(View):
+    @method_decorator(login_required())
     def get(self, request):
         hilos_list = Hilo.objects.all()
         """
@@ -127,6 +138,7 @@ class ListHilosView(View):
 
 #vista para visualizar el detalle de un usuario
 class HiloDetailView(View, HilosQueryset):
+    @method_decorator(login_required())
     def get(self,request,pk):
         """
         Carga la página de detalle de una foto
@@ -151,6 +163,7 @@ class HiloDetailView(View, HilosQueryset):
             return response.HttpResponseNotFound('No existe el hilo')#error 404
 
     #@method_decorator(login_required())
+    @method_decorator(login_required())
     def post(self,request,pk):
         """
         esto cmuestra un formulario para crear una foto y la crea
