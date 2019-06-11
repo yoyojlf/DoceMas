@@ -22,4 +22,4 @@ urlpatterns = [
     path('capac',views.capac, name = "capac"),
     path('capac/add',views.add_capac, name = "add_capac"),
     path('capac/edit/<int:id>',views.edit_capac, name = "edit_capac"),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]

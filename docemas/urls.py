@@ -28,6 +28,7 @@ from material.views import CreateTypeDocument, ListTypesView, TypeEditView, Crea
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('polls.urls')),
+
     url(r'^adm/new_user$', CreateUser.as_view(), name='create_user'), #url normal basada en clase
     url(r'^adm/users$', ListUsersView.as_view(), name='list_users'), #url normal basada en clase
     #path(r'users/edit/<int:pk>', Edit_user.as_view(), name='edit_user'),
@@ -58,4 +59,7 @@ urlpatterns = [
     #Login Logout
     url(r'^login$', LoginView.as_view(), name='users_login'), #url normal basada en clase
     url(r'^logout$', LogoutView.as_view(), name='users_logout'), #url normal basada en clase
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

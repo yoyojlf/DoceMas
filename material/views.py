@@ -11,7 +11,12 @@ from django.db.models import Q
 from material.models import TypeDocument, Document
 from material.forms import TypeDocumentForm, DocumentForm
 
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
+
 # Create your views here.
+
+#region TIPO DOCUMENTO
 
 #Query que retorna los Tipos de material
 class TypeDocumentQueryset(object):
@@ -130,12 +135,24 @@ class TypeEditView(View, TypeDocumentQueryset):
                 } 
                 return JsonResponse(data) 
 
+#endregion
+
 #Query que retorna los materiales
 class DocumentQueryset(object):
 
     def get_documents_queryset(self,request):
         documents = Document.objects.all()
         return documents
+
+#Metodo para subir archivos
+def Upload(request):
+    context = {}
+    if request.method == 'POST':
+        uploaded_file = request.FILES['archivo']
+        fs = FileSystemStorage()
+        name = fs.save(uploaded_file.name, uploaded_file)
+        context['url'] = fs.url(name)
+    return render(request, 'material/list_documents.html', context)
 
 #Crea un nuevo material
 class CreateDocument(View):
@@ -152,11 +169,10 @@ class CreateDocument(View):
     #@method_decorator(login_required())
     def post(self,request):
         try:
-            form = DocumentForm(request.POST or None, request.FILES or None)
+            form = DocumentForm(request.POST , request.FILES )
             if form.is_valid():
                 
-                new_document = form.save(commit=False)
-                new_document.save()
+                new_document = form.save()
                 
                 data = { 
                     'mensaje': 'El Material fue registrado correctamente.', 
