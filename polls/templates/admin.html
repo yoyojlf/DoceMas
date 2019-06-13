@@ -34,7 +34,7 @@
                                             <h3 class="padding-top25">Colegios</h3>
                                         </a>
                                         <p>
-                                            Aqui podra administrar los colegios
+                                            Aqui podrá administrar los colegios
                                         </p>
                                     </div>
                                 </div>
@@ -49,7 +49,7 @@
                                             <h3 class="padding-top25">Asignaturas</h3>
                                         </a>
                                         <p>
-                                            Aqui podra administrar las asignaturas
+                                            Aqui podrá administrar las asignaturas
                                         </p>
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@
                                             <h3 class="padding-top25">Niveles</h3>
                                         </a>
                                         <p>
-                                            Aqui podra administrar los niveles
+                                            Aqui podrá administrar los niveles
                                         </p>
                                     </div>
                                 </div>
@@ -74,14 +74,14 @@
                             <div class="col-lg-4 col-md-4 col-sm-4 text-center wow fadeInLeft">
                                 <div class="service-box padding-top30 padding-bottom40">
                                     <div class="service-box-icon">
-                                        <a href="usuario"><img alt="Usuarios" src="{% static "img/icons/usuario.png" %}"></a>
+                                        <a href="{% url 'list_users' %}"><img alt="Usuarios" src="{% static "img/icons/usuario.png" %}"></a>
                                     </div>
                                     <div class="service-box-info">
-                                        <a href="usuario">
+                                        <a href="{% url 'list_users' %}">
                                             <h3 class="padding-top25">Usuarios</h3>
                                         </a>
                                         <p>
-                                            Aqui podra administrar los usuarios del sistema
+                                            Aqui podrá administrar los usuarios del sistema
                                         </p>
                                     </div>
                                 </div>
@@ -96,7 +96,7 @@
                                             <h3 class="padding-top25">OTECs</h3>
                                         </a>
                                         <p>
-                                            Aqui podra administrar las OTECs
+                                            Aqui podrá administrar las OTECs
                                         </p>
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@
                                             <h3 class="padding-top25">Capacitaciones</h3>
                                         </a>
                                         <p>
-                                            Aqui podra administrar las capacitaciones
+                                            Aqui podrá administrar las capacitaciones
                                         </p>
                                     </div>
                                 </div>
@@ -121,14 +121,14 @@
                             <div class="col-lg-4 col-md-4 col-sm-4 text-center wow fadeInLeft">
                                 <div class="service-box padding-top30 padding-bottom40">
                                     <div class="service-box-icon">
-                                        <a href="#"><img alt="Foro" src="{% static "img/icons/foro.png" %}"></a>
+                                        <a href="{% url 'list_hilo' %}"><img alt="Foro" src="{% static "img/icons/foro.png" %}"></a>
                                     </div>
                                     <div class="service-box-info">
-                                        <a href="#">
+                                        <a href="{% url 'list_hilo' %}">
                                             <h3 class="padding-top25">Foro</h3>
                                         </a>
                                         <p>
-                                            Aqui podra administrar el foro
+                                            Aqui podrá administrar el foro
                                         </p>
                                     </div>
                                 </div>
@@ -136,14 +136,14 @@
                             <div class="col-lg-4 col-md-4 col-sm-4 text-center wow fadeInRight">
                                 <div class="service-box padding-top30 padding-bottom40">
                                     <div class="service-box-icon">
-                                        <a href="#"><img alt="Material" src="{% static "img/icons/material1.png" %}"></a>
+                                        <a href="{% url 'list_document' %}"><img alt="Material" src="{% static "img/icons/material.png" %}"></a>
                                     </div>
                                     <div class="service-box-info">
-                                        <a href="#">
+                                        <a href="{% url 'list_document' %}">
                                             <h3 class="padding-top25">Material Educativo</h3>
                                         </a>
                                         <p>
-                                            Aqui podra administrar los materiales educativos
+                                            Aqui podrá administrar los materiales educativos
                                         </p>
                                     </div>
                                 </div>
@@ -158,7 +158,24 @@
                                             <h3 class="padding-top25">Reportes</h3>
                                         </a>
                                         <p>
-                                            Aqui podra generar los reportes
+                                            Aqui podrá generar los reportes
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 text-center wow fadeInRight">
+                                <div class="service-box padding-top30 padding-bottom40">
+                                    <div class="service-box-icon">
+                                        <a href="{% url 'list_type' %}"><img alt="Tipo Material" src="{% static "img/icons/type.png" %}"></a>
+                                    </div>
+                                    <div class="service-box-info">
+                                        <a href="{% url 'list_type' %}">
+                                            <h3 class="padding-top25">Tipo Material</h3>
+                                        </a>
+                                        <p>
+                                            Aqui podrá administrar el tipo de material.
                                         </p>
                                     </div>
                                 </div>

@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'polls',
     'users',
     'foro',
+    'material',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +131,18 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# -*- coding: utf-8 -*-
+from django.conf import settings
+
+PUBLIC = 'PUB'
+PRIVATE = 'PRI'
+
+DEFAULT_VISIBILITY = (
+    (PUBLIC, 'Pública'),
+    (PRIVATE, 'Privada')
+)
+
+VISIBILITY = getattr(settings, 'VISIBILITY', DEFAULT_VISIBILITY)
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

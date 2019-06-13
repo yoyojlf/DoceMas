@@ -31,6 +31,7 @@ def add_user(request):
 """
 #imports
 from django.http import HttpResponse
+from django.http import JsonResponse
 from django.http import response
 from django.shortcuts import render, redirect
 from users.models import Usuario
@@ -134,14 +135,19 @@ class Create(View):
         if form.is_valid():
             new_user = form.save()
             #form = PhotoForm()
-            success_message = 'Usuario guardado con éxito'
+            data = { 
+                'mensaje': 'El usuario fue registrado correctamente.', 
+                'type' : 'success', 
+                'tittle': 'Registro Usuario' 
+            } 
+            return JsonResponse(data) 
         else:
-            success_message = 'Informacion no valida'
-        context = {
-            'form': form,
-            'success_message': success_message
-        }
-        return render(request, 'users/new_user.html', context)
+            data = { 
+                'mensaje': 'El usuario no se pudo registrar.', 
+                'type' : 'error', 
+                'tittle': 'Registro Usuario' 
+            } 
+            return JsonResponse(data) 
 
 
 #vista para listar los usuarios OJO es solo para caracter de prueba

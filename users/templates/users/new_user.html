@@ -1,21 +1,48 @@
 {% extends 'base.html' %}
 
-{% block title %}Nuevo usuario{% endblock %}
 
 {%block section %}
-    <h1>Nuevo Usuario</h1>
-    <hr>
+
+<!-- Title, Breadcrumb -->
+<div class="breadcrumb-wrapper">
+    <div class="pattern-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="padding-top40 text-center">
+                        <h2 class="light wow fadeIn">Mantenedor de Usuarios</h2>
+                        <h4 class="light wow fadeInRight">
+                            Formulario para agregar un nuevo usuario
+                        </h4>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Title, Breadcrumb -->
+    <br><br>
+    
     {% if success_message %}
         {{success_message}}
     {% else %}
 
-    <form method="post">
+    <form id="form_add"  method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <div>
-        <button class="btn btn-color">Crear Usuario</button>
+        <input type="button" id="btn_add" class="btn btn-color" value="Crear Usuario">
     </div>
     </form>
     {% endif%}
 
+    {% block scripts %}
+        
+    {% include 'user/user.html' %}
+    
+    {% endblock %}    
+
 {% endblock %}
+
+
+
