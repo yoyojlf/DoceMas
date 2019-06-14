@@ -40,7 +40,10 @@ class CreateHilo(View):
 
         success_message = ''
 
-        form = HiloForm(request.POST)
+        hi_with_owner = Hilo()
+        hi_with_owner.owner = request.user  # asigno como propietario
+        form = HiloForm(request.POST, instance=hi_with_owner)
+        #form = HiloForm(request.POST)
         if form.is_valid():
             new_user = form.save()
             #form = PhotoForm()
@@ -80,8 +83,11 @@ class CreateReHilo(View):
         """
 
         success_message = ''
+        re_with_owner = ReHilo()
+        re_with_owner.owner = request.user  # asigno como propietario
+        form = ReHiloForm(request.POST, instance=re_with_owner)
 
-        form = ReHiloForm(request.POST)
+        #form = ReHiloForm(request.POST, instance=re_owner)
         if form.is_valid():
             new_user = form.save()
             #form = PhotoForm()
@@ -165,6 +171,7 @@ class HiloDetailView(View, HilosQueryset):
         re_con_hilo = ReHilo()
         re_con_hilo.at_hilo = hilo #asigno hilo al que pertenece
         re_con_hilo.titulo = "Re: "+ str(hilo.titulo)
+        re_con_hilo.owner = request.user
         form = ReHiloForm(request.POST, instance=re_con_hilo)
 
         if form.is_valid():

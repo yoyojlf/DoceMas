@@ -26,11 +26,11 @@
     {% endif %}
 
     <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <div>
-            <button class="btn btn-color">Agregar ReHilo</button>
-        </div>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+        <button class="btn btn-color">Agregar respuesta</button>
+    </div>
     </form>
 
 {% endblock %}
