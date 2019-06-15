@@ -7,15 +7,17 @@
 {% block section %}
     <h1>{{ hilo.titulo }}</h1>
     <br>
-
-    <p>Autor: {{ hilo.owner.username }} | {{hilo.fecha}}</p>
+    <hr>
+    <h3>Autor: {{ hilo.owner.username }} | {{hilo.fecha}}</h3>
     <br>
-    <p>Descripcion: {{ hilo.descripcion }}</p>
+    <p>>>>> {{ hilo.descripcion }}</p>
     <br>
     {% for re in rehilo %}
+        <hr>
         <br>
-        <h2>{{ re.titulo }} | {{re.fecha}}</h2>
-        <p>Autor: {{ re.owner.username }} >-> {{ re.descripcion }}</p>
+        <h2>{{ re.titulo }} </h2>
+        <h3>Autor: {{ re.owner.username }} | {{re.fecha}} </h3>
+        <p>>>>> {{ re.descripcion }}</p>
         <br>
     {% endfor %}
 

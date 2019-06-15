@@ -156,7 +156,7 @@ class HiloDetailView(View, HilosQueryset):
         else:
             return response.HttpResponseNotFound('No existe el hilo')#error 404
 
-    #@method_decorator(login_required())
+    @method_decorator(login_required())
     def post(self,request,pk):
         """
         esto cmuestra un formulario para crear una foto y la crea
