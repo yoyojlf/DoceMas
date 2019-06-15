@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b458608-187a-4469-8c5e-5c5351bd05b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docemas/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/docemas/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foro/templates/foro/hilo.html" beforeDir="false" afterPath="$PROJECT_DIR$/foro/templates/foro/hilo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foro/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/foro/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/material/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/material/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/material/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/material/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/material/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -197,6 +189,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Course" />
       <pane id="ProjectPane">
         <subPane>
@@ -220,7 +213,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -312,11 +304,12 @@
       <workItem from="1560387175618" duration="6294000" />
       <workItem from="1560523703764" duration="7307000" />
       <workItem from="1560566975112" duration="891000" />
+      <workItem from="1560576330631" duration="407000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14492000" />
+    <option name="totallyTimeSpent" value="14899000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -330,10 +323,9 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19894099" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20196672" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="SQL Generator" weight="0.3289689" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32733223" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
@@ -349,6 +341,7 @@
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.3289689" />
+      <window_info anchor="bottom" id="SQL Generator" order="15" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
