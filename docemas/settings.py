@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'users',
     'foro',
     'material',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

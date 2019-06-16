@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}Material{% endblock %}
+
+{%block section %}
+
+<!-- Title, Breadcrumb -->
+<div class="breadcrumb-wrapper">
+    <div class="pattern-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                    <h2 class="title">Mantenedor de Material</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Title, Breadcrumb -->
+    
+<!-- Main Content -->
+<div class="content margin-bottom60">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <table class="shopping-cart-table table">
+                        <tbody>
+                            <tr>
+                                <td class="action no-border">
+                                    <a class="update btn btn-color pull-left" href="{% url 'create_document' %}" > Agregar Material</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-box">
+                        <!-- shopping-cart-table -->
+                        <table class="shopping-cart-table responsive-table table table-bordered table-striped" id="shopping-cart-table">
+                            <thead>
+                                <tr>
+                                    <th>Titulo</th>
+                                    <th>Descripción</th>
+                                    <th>Fecha</th>
+                                    <th>Estado</th>
+                                    <th>Visibilidad</th>
+                                    <th>Nivel</th>
+                                    <th>Asignatura</th>
+                                    <th>Tipo Documento</th>
+                                    <th>Documento</th>
+                                    <th>Editar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for doc in documents_list %}
+                                    <tr id="datos">
+                                        <td>{{doc.title}}</td>
+                                        <td>{{doc.descripcion}}</td>    
+                                        <td>{{doc.fecha}}</td>    
+                                        <td>{{doc.estado}}</td>    
+                                        <td>{{doc.visibility}}</td>    
+                                        <td>{{doc.nivel.nombre}}</td>    
+                                        <td>{{doc.asignatura.nombre}}</td>    
+                                        <td>{{doc.typeDocument.titulo}}</td>  
+                                        <td><a href="{{ doc.archivo.url }}">Archivo {{ doc.title }}</a></td>
+                                        <td>{{doc.archivo}}</td>
+                                        <td>
+                                            
+                                            <a href="{% url 'edit_document' pk=doc.pk %}" ><i class="fa fa-pencil"></i> Editar</a>
+                                        </td>    
+                                    </tr>
+                                    <a href="{{ doc.archivo.url }}">Archivo {{ doc.title }}</a>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!-- /shopping-cart-table -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Main Content -->
+
+    
+    
+{% endblock %}
+

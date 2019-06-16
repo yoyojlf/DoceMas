@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+
+{%block section %}
+{% load crispy_forms_tags %}
+<!-- Title, Breadcrumb -->
+<div class="breadcrumb-wrapper">
+    <div class="pattern-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="padding-top40 text-center">
+                        <h2 class="light wow fadeIn">Mantenedor de Material</h2>
+                        <h4 class="light wow fadeInRight">
+                            Formulario para editar Material
+                        </h4>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Title, Breadcrumb -->
+    <br><br>
+    
+    {% if success_message %}
+        {{success_message}}
+    {% else %}
+
+    <div class="container">
+        <form id="form_edit"  method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-4">
+                        {{ form.typeDocument|as_crispy_field }}               
+                    </div>
+                    <div class="col-md-4">
+                        {{ form.asignatura|as_crispy_field }}               
+                    </div>
+                    <div class="col-md-4">
+                        {{ form.nivel|as_crispy_field }}               
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-6">
+                        {{ form.title|as_crispy_field }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.descripcion|as_crispy_field }}               
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-4">
+                        {{ form.archivo|as_crispy_field }}               
+                    </div>
+                    <div class="col-md-4">
+                        {{ form.estado|as_crispy_field }}               
+                    </div>
+                    <div class="col-md-4">
+                        {{ form.visibility|as_crispy_field }}               
+                    </div>
+                </div>
+            </div>
+            <div>
+            <input type="button" id="btn_edit" class="btn btn-color" value="Editar">
+            </div>
+        </form>
+    </div>
+
+    <br><br>
+    
+    {% endif%}
+
+    {% block scripts %}
+        
+    {% include 'material/material.html' %}
+    
+    {% endblock %}   
+
+{% endblock %}
+
+
+
