@@ -13,7 +13,7 @@ class TypeDocumentForm(forms.ModelForm):
 class DocumentForm(forms.ModelForm):
     class Meta:
         model = Document
-        exclude = []
+        exclude = ['owner']
         widgets = {
             'descripcion': forms.Textarea,
         }

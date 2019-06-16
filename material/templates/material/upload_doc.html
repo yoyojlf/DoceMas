@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Upload Material{% endblock %}
+
+{% block section %}
+    <h1>Upload Material</h1>
+    {% if msg %}
+        <hr>
+        <p>|{% for ms in msg %}{{ msg }}|{% endfor %} </p>
+        <hr>
+    {% endif %}
+
+    <form class="form-inline" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <button class="btn btn-color">Upload Doc</button>
+        </div>
+    </form>
+    <br>
+{% endblock %}

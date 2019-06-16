@@ -149,15 +149,47 @@ class DocumentQueryset(object):
 
 
 # Metodo para subir archivos
-def Upload(request):
+def upload(request):
     context = {}
     if request.method == 'POST':
-        uploaded_file = request.FILES['archivo']
+        uploaded_file = request.FILES['document']
         fs = FileSystemStorage()
         name = fs.save(uploaded_file.name, uploaded_file)
         context['url'] = fs.url(name)
     return render(request, 'material/list_documents.html', context)
+#region PruebaCreaDocument
+class CreateDocumentView(View):
 
+    @method_decorator(login_required())
+    def get(self, request):
+        form = DocumentForm()
+        msg = ['default',]
+
+        context = {
+            'form': form,
+            'msg': msg
+        }
+        return render(request, 'material/upload_doc.html', context)
+
+    @method_decorator(login_required())
+    def post(self, request):
+        doc = Document()
+        doc.owner = request.user
+        form = DocumentForm(request.POST, request.FILES, instance=doc)
+        msg = []
+        if form.is_valid():
+            form.save()
+            msg.append("Doc creado correctamente")
+
+        else:
+            msg.append("DocForm no valido")
+
+        context = { 'form': form,
+                    'msg': msg, }
+        return render(request,'material/upload_doc.html',context)
+
+
+#endregion
 
 # Crea un nuevo material
 class CreateDocument(View):

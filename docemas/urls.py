@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf.urls import url
 from users.views import Create as CreateUser, ListUsersView, LoginView, LogoutView, UserDetailView, UserEditView
 from foro.views import CreateHilo, ListHilosView, CreateReHilo, HiloDetailView
-from material.views import CreateTypeDocument, ListTypesView, TypeEditView, CreateDocument, ListDocumentsView, DocumentEditView
+from material.views import CreateTypeDocument, ListTypesView, TypeEditView, CreateDocument, ListDocumentsView, DocumentEditView, upload, CreateDocumentView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -44,6 +44,8 @@ urlpatterns = [
     url(r'^logout$', LogoutView.as_view(), name='users_logout'), #url normal basada en clase
 
     #url APP Material
+    url(r'^upload/$', upload, name='upload'),
+    url(r'^upload_doc$', CreateDocumentView.as_view(), name='upload_doc'),
     url(r'^type/all$', ListTypesView.as_view(), name='list_type'),
     url(r'^type/new_type$', CreateTypeDocument.as_view(), name='create_type'),
     url(r'^type/(?P<pk>[0-9]+)$', TypeEditView.as_view(), name='edit_type'),
