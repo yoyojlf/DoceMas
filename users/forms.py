@@ -6,8 +6,12 @@ class UsuarioForm(forms.ModelForm):
     class Meta:
         model = Usuario
         exclude = ['is_staff','is_superuser','last_login','date_joined','groups','user_permissions',]
+        labels = {'username': 'Nombre de usuario', 'password': 'Contraseña', 'first_name': 'Nombre', 'last_name': 'Apellidos', }
+        help_texts = { 'password': ' ', 'username': ' ', 'is_active': '' }
+
         widgets = {
             'password': forms.PasswordInput(),
+            'presentacion': forms.Textarea,
         }
 
         
