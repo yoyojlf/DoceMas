@@ -9,32 +9,32 @@
 <nav class="collapse navbar-collapse menu">
     <ul class="nav navbar-nav sf-menu">
         <li>
-            <a id="current" href="usuario">
+            <a id="current" href="{% url 'list_users' %}">
             Usuarios
             </a>
         </li>
         <li>
-            <a id="" href="nivel">
+            <a id="" href="{% url 'nivel' %}">
             Niveles
             </a>
         </li>
         <li>
-            <a id="" href="asig">
+            <a id="" href="{% url 'asig' %}">
             Asignaturas
             </a>
         </li>
         <li>
-            <a id="" href="colegio">
+            <a id="" href="{% url 'colegio' %}">
             Colegios
             </a>
         </li>
         <li>
-            <a id="" href="otec">
+            <a id="" href="{% url 'otec' %}">
             OTEC
             </a>
         </li>
         <li>
-            <a id="" href="#">
+            <a id="" href="{% url 'list_document' %}">
             Material
             </a>
         </li>

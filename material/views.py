@@ -286,3 +286,90 @@ class DocumentEditView(View):
                     'tittle': 'Material'
                 }
                 return JsonResponse(data)
+
+#Edit material
+class DocumentEditView(View):
+    def get(self, request, pk):
+        possible_docs = DocumentQueryset.get_documents_queryset().filter(pk=pk)
+        doc = possible_docs[0] if len(possible_docs) == 1 else None
+        if doc is not None:
+            # cargamos el detalle
+            context = {
+                'form': DocumentForm(instance=doc),
+                'id': doc.pk,
+            }
+            return render(request, 'material/edit_documento.html', context)
+        else:
+            data = {
+                'mensaje': 'No existe el material!.',
+                'type': 'error',
+                'tittle': 'Material'
+            }
+            return JsonResponse(data)
+
+    def post(self, request, pk):
+        possible_docs = get_documents_queryset(request).filter(pk=pk)
+        doc = possible_docs[0] if len(possible_docs) == 1 else None
+        if doc is not None:
+            form = DocumentForm(request.POST, instance=doc)
+            if form.is_valid():
+
+                form.save()
+                data = {
+                    'mensaje': 'El material se editó correctamente!.',
+                    'type': 'success',
+                    'tittle': 'Material'
+                }
+                return JsonResponse(data)
+
+            else:
+                data = {
+                    'mensaje': 'No se puedo editar!.',
+                    'type': 'error',
+                    'tittle': 'Material'
+                }
+                return JsonResponse(data)
+
+
+class EditDocView(View):
+    @method_decorator(login_required())
+    def get(self, request,pk):
+        possible_docs = Document.objects.filter(pk=pk)
+        doc = possible_docs[0] if len(possible_docs) == 1 else None
+        msg = ['default', ]
+        form = DocumentForm()
+        if doc:
+            form = DocumentForm(instance=doc)
+
+
+
+
+        context = {
+            'form': form,
+            'msg': msg,
+        }
+        return render(request, 'material/upload_doc.html', context)
+
+    @method_decorator(login_required())
+    def post(self, request,pk):
+        possible_docs = Document.objects.filter(pk=pk)
+        doc = possible_docs[0] if len(possible_docs) == 1 else None
+        msg = ['default', ]
+        form = DocumentForm()
+        if doc:
+            """
+            doc = Document()
+            doc.pk = pk
+            """
+            form = DocumentForm(request.POST,instance=doc)
+            if form.is_valid():
+                form.save()
+                msg.append("Doc creado correctamente")
+            else:
+                msg.append('DocForm no Valido!')
+        else:
+            msg.append("Doc no valido")
+
+        context = { 'form': form,
+                    'msg': msg, }
+        return render(request,'material/upload_doc.html',context)

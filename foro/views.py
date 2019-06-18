@@ -16,7 +16,7 @@ from foro.forms import HiloForm, ReHiloForm
 # Create your views here.
 class CreateHilo(View):
 
-    #@method_decorator(login_required())
+    @method_decorator(login_required())
     def get(self,request):
         """
         esto cmuestra un formulario para crear una foto
@@ -30,7 +30,7 @@ class CreateHilo(View):
         }
         return render(request, 'foro/add_hilo.html', context)
 
-    #@method_decorator(login_required())
+    @method_decorator(login_required())
     def post(self,request):
         """
         esto cmuestra un formulario para crear una foto y la crea
@@ -49,6 +49,7 @@ class CreateHilo(View):
             #form = PhotoForm()
             success_message = 'Hilo creado con éxito'
             form = HiloForm()
+            return redirect('my_hilos')
         else:
             success_message = 'Informacion no valida'
         context = {
@@ -60,7 +61,7 @@ class CreateHilo(View):
 #Crea una respuesta a un hilo por el momento hace referencia a foro/add_rehilo.html
 class CreateReHilo(View):
 
-    #@method_decorator(login_required())
+    @method_decorator(login_required())
     def get(self,request):
         """
         esto cmuestra un formulario para crear una foto
@@ -74,7 +75,7 @@ class CreateReHilo(View):
         }
         return render(request, 'foro/add_rehilo.html', context)
 
-    #@method_decorator(login_required())
+    @method_decorator(login_required())
     def post(self,request):
         """
         esto cmuestra un formulario para crear una foto y la crea
@@ -118,21 +119,53 @@ class HilosQueryset(object):
 
 #ojo esta vista es solo en caracter de prueba luego hay que modificarla para llevarla a producción
 class ListHilosView(View):
+
+    @method_decorator(login_required())
     def get(self, request):
-        hilos_list = Hilo.objects.all()
+        hilos_list = Hilo.objects.all().reverse()
         """
         html = '<ul>'
         for photo in photos:
             html += '<li>'+photo.name+'</li>'
         html += '</ul>'
         """
+        titulo = 'Hilos'
+        url = 'my_hilos'
+        redire = 'Ver Mis Hilos'
         context = {
-            "hilos_list" : hilos_list
+            "hilos_list" : hilos_list,
+            "titulo": titulo,
+            "url": url,
+            'redi': redire,
         }
         return render(request,"foro/list_hilos.html", context)
 
+class MyHilosView(View):
+
+    @method_decorator(login_required())
+    def get(self, request):
+        hilos_list = Hilo.objects.filter(owner=request.user).reverse()
+        """
+        html = '<ul>'
+        for photo in photos:
+            html += '<li>'+photo.name+'</li>'
+        html += '</ul>'
+        """
+        titulo = 'Mis Hilos'
+        url = 'list_hilo'
+        redire = 'Ver Hilos'
+        context = {
+            "hilos_list" : hilos_list,
+            "titulo": titulo,
+            'url': url,
+            'redi': redire,
+        }
+        return render(request,"foro/list_hilos.html", context)
+
+#
 #vista para visualizar el detalle de un usuario
 class HiloDetailView(View, HilosQueryset):
+    @method_decorator(login_required())
     def get(self,request,pk):
         """
         Carga la página de detalle de una foto

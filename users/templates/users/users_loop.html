@@ -1,5 +1,5 @@
-<div align="center">
-    <table class="table-responsive">
+<div align="center" class="table-responsive">
+
         {% for usuario in users_list %}
             {% if not usuario.is_superuser %}
                 <p>
@@ -13,5 +13,6 @@
                 </p>
             {% endif %}
         {% endfor %}
-    </table>
+
 </div>
+<br><br>
