@@ -163,7 +163,7 @@ class ListUsersView(View):
             }
             return render(request, "users/list_users.html", context)
         else:
-            redirect('index')
+            return redirect('index')
 
 #vista para visualizar el detalle de un usuario
 class UserDetailView(View, UsersQueryset):
