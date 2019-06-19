@@ -18,8 +18,13 @@ from django.urls import path, include
 from django.conf.urls import url
 
 from users.views import Create as CreateUser, ListUsersView, LoginView, LogoutView, UserDetailView, UserEditView
+<<<<<<< HEAD
 from foro.views import CreateHilo, ListHilosView, CreateReHilo, HiloDetailView
 from material.views import CreateTypeDocument, ListTypesView, TypeEditView, CreateDocument, ListDocumentsView, DocumentEditView
+=======
+from foro.views import CreateHilo, ListHilosView, CreateReHilo, HiloDetailView, MyHilosView
+from material.views import CreateTypeDocument, ListTypesView, TypeEditView, CreateDocument, ListDocumentsView, DocumentEditView, upload, CreateDocumentView, EditDocView
+>>>>>>> origin/yoyo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -46,6 +51,8 @@ urlpatterns = [
     #url hilos
     url(r'^foro/hilos$', ListHilosView.as_view(), name='list_hilo'), #url normal basada en clase
     url(r'^foro/all$', ListHilosView.as_view(), name='list_hilo'), #url normal basada en clase
+    #url hilos
+    url(r'^foro/my_hilos$', MyHilosView.as_view(), name='my_hilos'), #url normal basada en clase
     #url ReHilo
     url(r'^foro/re_hilo$', CreateReHilo.as_view(), name='create_rehilo'), #url normal basada en clase
     #ver detalle usuario
@@ -54,4 +61,16 @@ urlpatterns = [
     #Login Logout
     url(r'^login$', LoginView.as_view(), name='users_login'), #url normal basada en clase
     url(r'^logout$', LogoutView.as_view(), name='users_logout'), #url normal basada en clase
+
+    #url APP Material
+    url(r'^upload/$', upload, name='upload'),
+    url(r'^upload_doc$', CreateDocumentView.as_view(), name='upload_doc'),
+    url(r'^type/all$', ListTypesView.as_view(), name='list_type'),
+    url(r'^type/new_type$', CreateTypeDocument.as_view(), name='create_type'),
+    url(r'^type/(?P<pk>[0-9]+)$', TypeEditView.as_view(), name='edit_type'),
+
+    url(r'^docum/all$', ListDocumentsView.as_view(), name='list_document'),
+    url(r'^docum/new_document$', CreateDocument.as_view(), name='create_document'),
+    url(r'^docum/(?P<pk>[0-9]+)$', EditDocView.as_view(), name='edit_document'),
+
 ]

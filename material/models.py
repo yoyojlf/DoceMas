@@ -21,12 +21,16 @@ class Document(models.Model):
     typeDocument = models.ForeignKey(TypeDocument,null=True,blank=True,on_delete=models.CASCADE)
     asignatura = models.ForeignKey(Asignatura,null=True,blank=True,on_delete=models.CASCADE)
     nivel = models.ForeignKey(Nivel,null=True,blank=True,on_delete=models.CASCADE)
-    titulo = models.CharField(max_length=50,blank=True)
+    title = models.CharField(max_length=50,blank=True)
     descripcion = models.CharField(max_length=500,blank=True)
     fecha = models.DateTimeField(auto_now_add=True)
+<<<<<<< HEAD
     archivo = models.FileField(upload_to='material/', validators=[valid_extension])
+=======
+    archivo = models.FileField(upload_to='documents/')
+>>>>>>> origin/yoyo
     estado = models.BooleanField(default=True)
     visibility = models.CharField(max_length=3,choices=VISIBILITY, default=PUBLIC)
     
     def __str__(self):
-        return self.titulo
+        return self.title

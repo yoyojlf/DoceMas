@@ -2,6 +2,7 @@
 
 
 {%block section %}
+<<<<<<< HEAD
 
 <!-- Title, Breadcrumb -->
 <div class="breadcrumb-wrapper">
@@ -23,18 +24,39 @@
 <!-- /Title, Breadcrumb -->
     <br><br>
     
+=======
+    <br>>
+    <div align="center">
+        <h1>Nuevo Usuario</h1>
+    </div>
+    <hr>
+>>>>>>> origin/yoyo
     {% if success_message %}
         {{success_message}}
-    {% else %}
+    {% endif%}
 
+    <div align="center">
+
+        <form class="form-inline" role="form" method="post">
+            {% csrf_token %}
+            <table class="table-responsive">
+                {{ form.as_table }}
+            </table>
+            <div>
+                <button class="btn btn-color">Crear Usuario</button>
+            </div>
+        </form>
+
+<<<<<<< HEAD
     <form id="form_add"  method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <div>
         <input type="button" id="btn_add" class="btn btn-color" value="Crear Usuario">
+=======
+>>>>>>> origin/yoyo
     </div>
-    </form>
-    {% endif%}
+    <br><br>
 
     {% block scripts %}
         

@@ -5,11 +5,21 @@
 {% endblock %}
 
 {% block section %}
-    <h1>{{ usuario.username }}</h1>
-    <p>Nombre de usuario: {{ usuario.username }}</p>
-    <p>Password: {{ usuario.password }}</p>
-    <p>Nombre: {{ usuario.first_name }} {{ usuario.last_name }}</p>
-    <p>Activo: {{ usuario.is_active }}</p>
+    <br>
+    <div align="center">
+        <h1>{{ usuario.username }}</h1>
+    </div>
+    <br>
+    <hr>
+
+    <div align="center">
+        <table class="table-responsive">
+            <p>Nombre de usuario: {{ usuario.username }}</p>
+            <p>Password: {{ usuario.password }}</p>
+            <p>Nombre: {{ usuario.first_name }} {{ usuario.last_name }}</p>
+            <p>Activo: {{ usuario.is_active }}</p>
+        </table>
+    </div>
 
 
 {% endblock %}

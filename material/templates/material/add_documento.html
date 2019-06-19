@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 
+<<<<<<< HEAD
 {% load crispy_forms_tags %}
 
 {%block section %}
 
+=======
+
+
+{%block section %}
+{% load crispy_forms_tags %}
+>>>>>>> origin/yoyo
 <!-- Title, Breadcrumb -->
 <div class="breadcrumb-wrapper">
     <div class="pattern-overlay">
@@ -47,7 +54,11 @@
             <div class="row">
                 <div class="form-group">
                     <div class="col-md-6">
+<<<<<<< HEAD
                         {{ form.titulo|as_crispy_field }}               
+=======
+                        {{ form.title|as_crispy_field }}
+>>>>>>> origin/yoyo
                     </div>
                     <div class="col-md-6">
                         {{ form.descripcion|as_crispy_field }}               

@@ -1,48 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Mantenedor Otec
+{% endblock %}
 
-<!-- Header -->
-<header id="header">
-    <!-- Header Top Bar -->
-    <div class="top-bar">
-        <div class="slidedown collapse">
-            <div class="container">
-                <div class="pull-left">
-                    <p>Bienvenido @usuario </p> 
-                </div>
-                <div class="phone-login pull-right">
-                    
-                    <a href="/." data-toggle="modal" data-target="#"><i class="fa fa-sign-in"></i> Cerrar Sesión</a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Header Top Bar -->
-    <!-- Main Header -->
-    <div class="main-header">
-        <div class="container">
-            <!-- TopNav -->
-            <div class="topnav navbar-header">
-                <a class="navbar-toggle down-button" data-toggle="collapse" data-target=".slidedown">
-                <i class="fa fa-angle-down icon-current"></i>
-                </a> 
-            </div>
-            <!-- /TopNav-->
-            <!-- Logo -->
-            <div class="logo pull-left">
-                <h1>
-                    <a href="/adm">
-                    <img class="" src="{% static "img/carrusel/logodocemas.png" %}" alt="DoceMas" width="160" height="60">
-                    </a>
-                </h1>
-            </div>
-            <!-- /Logo -->
-            {% include 'polls/nav_adm.html' %}
-        </div>
-    </div>
-    <!-- /Main Header -->
-</header>
-<!-- /Header --> 
-<!-- Main Section -->
+{% block bar_nav %}
+{% include 'polls/nav_adm.html' %}
+{% endblock %}
+{% block section %}
+
+    <!-- Main Section -->
 <section id="main">
     <!-- Title, Breadcrumb -->
     <div class="breadcrumb-wrapper">
@@ -98,7 +65,7 @@
                                         <td>
                                             <a href="#"><i class="fa fa-trash-o"></i> Borrar</a>
                                         </td>
-                                    </tr>                                                
+                                    </tr>
                                 {% endfor %}
                             </tbody>
                         </table>
@@ -122,7 +89,7 @@
                     <h2 class="form-signin-heading modal-title" id="registrationModalLabel">Registro de OTEC</h2>
                 </div>
                 <form id="form_add" action="/otec/add" method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}    
+                    {% csrf_token %}
                     <div class="modal-body">
                         <div class="row">
                             <div class="form-group">
@@ -214,3 +181,5 @@
 </section>
 <!-- /Modals -->
 
+
+{% endblock %}

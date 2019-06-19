@@ -3,6 +3,7 @@
 {% block title %}Lista de usuarios{% endblock %}
 
 {%block section %}
+<<<<<<< HEAD
 
 <!-- Title, Breadcrumb -->
 <div class="breadcrumb-wrapper">
@@ -75,12 +76,23 @@
     <!--
     <h1>Lista de usuarios</h1>
 
+=======
+    <br>>
+    <div align="center">
+         <h1>Lista de usuarios</h1>
+    </div>
+    <hr>
+<!--
+>>>>>>> origin/yoyo
     {% for hilo in hilos_list %}
     <br>
         <p>{{user.username}}</p>
         <br>
     {% endfor %}
     -->
-    {% include 'users/users_loop.html'  %}
+    <div>
+        {% include 'users/users_loop.html'  %}
+    </div>
+
 {% endblock %}
 

@@ -1,17 +1,42 @@
 {% extends 'base.html' %}
 
-{% block title %}Hilos{% endblock %}
+{% block title %}{{ titulo }}{% endblock %}
 
 {%block section %}
-    <h1>Hilos</h1>
-
-    {% for hilo in hilos_list %}
     <br>
-        <p>{{hilo.titulo}} | {{hilo.pk}}</p>
-        <p>Autor: {{hilo.owner.username}} |<a href="{% url 'hilo_detail' hilo.pk %}">Detail</a></p>
+    <div align="center">
+        <h1>{{ titulo }}</h1>
+    </div>
 
-    <br>
-    {% endfor %}
+    <hr>
 
+
+    <div align="right">
+
+            <a class="btn btn-color" href="{% url 'create_hilo' %}">Nuevo Hilo</a>
+            <a class="btn btn-color" href="{% url url %}">{{ redi }}</a>
+
+    </div>
+
+
+    <div align="center">
+        {% if hilos_list %}
+            {% for hilo in hilos_list %}
+                <br>
+
+                <p>{{hilo.titulo}} | {{hilo.pk}} | {{hilo.fecha}}</p>
+
+                <p>Autor: {{hilo.owner.username}} |<a href="{% url 'hilo_detail' hilo.pk %}">Detail</a></p>
+
+                <br>
+            {% endfor %}
+
+        {% else %}
+
+            <h3>Aún no hay hilos para mostrar</h3>
+
+        {% endif %}
+    </div>
+    <br><br>
     <!--{% include 'users/users_loop.html'  %}-->
 {% endblock %}

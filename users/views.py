@@ -86,6 +86,8 @@ class LoginView(View):
                     if user.is_superuser:
                         url = request.GET.get('next', 'admin')
                         return redirect(url)
+                    elif user.is_staff:
+                        return redirect('admin')
                     else:
                         return redirect('index')
                 else:
@@ -152,21 +154,26 @@ class Create(View):
 
 #vista para listar los usuarios OJO es solo para caracter de prueba
 class ListUsersView(View):
+    @method_decorator(login_required())
     def get(self, request):
-        users_list = Usuario.objects.all()
-        """
-        html = '<ul>'
-        for photo in photos:
-            html += '<li>'+photo.name+'</li>'
-        html += '</ul>'
-        """
-        context = {
-            "users_list" : users_list
-        }
-        return render(request,"users/list_users.html", context)
+        if request.user.is_staff:
+            users_list = Usuario.objects.all()
+            """
+            html = '<ul>'
+            for photo in photos:
+                html += '<li>'+photo.name+'</li>'
+            html += '</ul>'
+            """
+            context = {
+                "users_list": users_list
+            }
+            return render(request, "users/list_users.html", context)
+        else:
+            return redirect('index')
 
 #vista para visualizar el detalle de un usuario
 class UserDetailView(View, UsersQueryset):
+    @method_decorator(login_required())
     def get(self,request,pk):
         """
         Carga la página de detalle de una foto
@@ -175,19 +182,23 @@ class UserDetailView(View, UsersQueryset):
         :return: HttpResponse
         """
 #        possible_photos = Photo.objects.filter(pk=pk).select_related('owner')
-        possible_users = self.get_users_queryset(request).filter(pk=pk)#.select_related('owner')
-        usuario = possible_users[0] if len(possible_users) == 1 else None
-        if usuario is not None:
-            #cargamos el detalle
-            context = {
-                'usuario': usuario
-            }
-            return render(request, 'users/detail.html',context)
+        if request.user.is_staff:
+            possible_users = self.get_users_queryset(request).filter(pk=pk)  # .select_related('owner')
+            usuario = possible_users[0] if len(possible_users) == 1 else None
+            if usuario is not None:
+                # cargamos el detalle
+                context = {
+                    'usuario': usuario
+                }
+                return render(request, 'users/detail.html', context)
+            else:
+                return response.HttpResponseNotFound('No existe el usuario')  # error 404
         else:
-            return response.HttpResponseNotFound('No existe el usuario')#error 404
+            redirect('index')
 
 #vista para visualizar el detalle de un usuario
 class UserEditView(View, UsersQueryset):
+    @method_decorator(login_required())
     def get(self,request,pk):
         """
         Carga la página de detalle de una foto
@@ -207,6 +218,7 @@ class UserEditView(View, UsersQueryset):
         else:
             return response.HttpResponseNotFound('No existe el usuario')#error 404
 
+    @method_decorator(login_required())
     def post(self,request,pk):
         """
         esto cmuestra un formulario para crear una foto y la crea

@@ -5,19 +5,26 @@
 {% endblock %}
 
 {% block section %}
-    <h1>{{ hilo.titulo }}</h1>
+    <div align="center">
+        <h1>{{ hilo.titulo }}</h1>
+    </div>
+    <br>
+    <hr>
+    <h3>Autor: {{ hilo.owner.username }} | {{hilo.fecha}}</h3>
+    <br>
+    <p>>>>> {{ hilo.descripcion }}</p>
     <br>
 
-    <p>Autor: {{ hilo.owner.username }}</p>
-    <br>
-    <p>Descripcion: {{ hilo.descripcion }}</p>
-    <br>
-    {% for re in rehilo %}
-        <br>
-        <h2>{{ re.titulo }}</h2>
-        <p>Autor: {{ re.owner.username }} >-> {{ re.descripcion }}</p>
-        <br>
-    {% endfor %}
+    <div align="center">
+        {% for re in rehilo %}
+            <hr>
+            <br>
+            <h2>{{ re.titulo }} </h2>
+            <h3>Autor: {{ re.owner.username }} | {{re.fecha}} </h3>
+            <p>>>>> {{ re.descripcion }}</p>
+            <br>
+        {% endfor %}
+    </div>
 
     {% if success_message %}
         <hr>
@@ -25,13 +32,15 @@
         <hr>
     {% endif %}
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <div>
-            <button class="btn btn-color">Agregar ReHilo</button>
-        </div>
-    </form>
+    <div align="center">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_table }}
+            <div>
+                <button class="btn btn-color">Agregar respuesta</button>
+            </div>
+        </form>
+    </div>
 
 {% endblock %}
 

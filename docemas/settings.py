@@ -144,5 +144,8 @@ DEFAULT_VISIBILITY = (
 )
 
 VISIBILITY = getattr(settings, 'VISIBILITY', DEFAULT_VISIBILITY)
+<<<<<<< HEAD
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+=======
+>>>>>>> origin/yoyo

@@ -7,13 +7,25 @@
 {% for error in errors %}
 <p>{{ error }}</p>
 {% endfor %}
+<br><br>
 
-<form method="post">
-    {% csrf_token %}
-    {{ login_form.as_p }}
-    <div>
-        <button>Entrar</button>
+    <div align="center">
+        <form class="form-inline" role="form" method="post" align="center">
+            {% csrf_token %}
+
+
+            <table class="table-responsive" >
+                {{ login_form.as_table }}
+
+            </table>
+            <br>
+            <div>
+                <button class="btn btn-color">Entrar</button>
+            </div>
+
+        </form>
     </div>
-</form>
+
+    <br><br>
 
 {% endblock %}

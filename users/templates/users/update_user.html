@@ -3,20 +3,26 @@
 {% block title %}Actualizar usuario{% endblock %}
 
 {%block section %}
-    <h1>Actualizar usuario</h1>
+    <div>
+        <h1>Actualizar usuario</h1>
+    </div>
     <hr>
     {% if success_message %}
         {{success_message}}
     {% endif%}
 
-    <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <div>
-        <button class="btn btn-color">Actializar Usuario</button>
+    <div align="center">
+        <form method="post">
+            {% csrf_token %}
+            <table class="table-responsive">
+                {{ form.as_table }}
+            </table>
+            <div>
+                <button class="btn btn-color">Actializar Usuario</button>
+            </div>
+        </form>
     </div>
-    </form>
-
+    <br><br>
 
 {% endblock %}
 

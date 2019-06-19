@@ -5,7 +5,7 @@ from foro.models import Hilo, ReHilo
 class HiloForm(forms.ModelForm):
     class Meta:
         model = Hilo
-        exclude = []
+        exclude = ['owner',]
         widgets = {
             'descripcion': forms.Textarea,
         }
@@ -15,7 +15,7 @@ class HiloForm(forms.ModelForm):
 class ReHiloForm(forms.ModelForm):
     class Meta:
         model = ReHilo
-        exclude = ['at_hilo', 'titulo']
+        exclude = ['at_hilo', 'titulo','owner',]
         widgets = {
             'descripcion': forms.Textarea,
         }
