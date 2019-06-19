@@ -87,20 +87,11 @@
                         <!-- /TopNav-->
                         <!-- Logo -->
                         <div class="logo pull-left">
-                            {% if user.is_authenticated %}
-                                <h1>
-                                    <a href="/adm">
-                                    <img class="" src="{% static "img/carrusel/logodocemas.png" %}" alt="DoceMas" width="160" height="60">
-                                    </a>
-                                </h1>
-                            {% else %}
-                                <h1>
-                                    <a href="/">
-                                    <img class="" src="{% static "img/carrusel/logodocemas.png" %}" alt="DoceMas" width="160" height="60">
-                                    </a>
-                                </h1>
-                            {% endif %}
-                            
+                            <h1>
+                                <a href="index.html">
+                                <img class="" src="{% static "img/carrusel/logodocemas.png" %}" alt="DoceMas" width="160" height="60">
+                                </a>
+                            </h1>
                         </div>
                         <!-- /Logo -->
                         {% block bar_nav %}{% include 'nav_principal.html' %}{% endblock %}

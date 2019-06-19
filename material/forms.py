@@ -6,10 +6,7 @@ class TypeDocumentForm(forms.ModelForm):
     class Meta:
         model = TypeDocument
         exclude = []
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/yoyo
         widgets = {
             'descripcion': forms.Textarea,
         }
@@ -17,13 +14,9 @@ class TypeDocumentForm(forms.ModelForm):
 class DocumentForm(forms.ModelForm):
     class Meta:
         model = Document
-<<<<<<< HEAD
-        exclude = []
-=======
         exclude = ['owner']
         labels = {'typeDocument': 'Tipo de documento', }
 
->>>>>>> origin/yoyo
         widgets = {
             'descripcion': forms.Textarea,
         }

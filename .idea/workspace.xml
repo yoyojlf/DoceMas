@@ -3,6 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="1b458608-187a-4469-8c5e-5c5351bd05b1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docemas/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/docemas/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docemas/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/docemas/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docemas/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/docemas/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/material/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/material/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/material/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/material/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/material/templates/material/add_documento.html" beforeDir="false" afterPath="$PROJECT_DIR$/material/templates/material/add_documento.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/material/templates/material/edit_documento.html" beforeDir="false" afterPath="$PROJECT_DIR$/material/templates/material/edit_documento.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/material/templates/material/list_documents.html" beforeDir="false" afterPath="$PROJECT_DIR$/material/templates/material/list_documents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/material/templates/material/material.html" beforeDir="false" afterPath="$PROJECT_DIR$/material/templates/material/material.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/material/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/material/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templates/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/list_users.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/list_users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/new_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/new_user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,54 +75,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/polls/templates/mant_colegio.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/polls/templates/mant_otec.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docemas/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1326">
-              <caret line="78" column="41" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/polls/templates/admin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2346">
-              <caret line="138" column="74" selection-start-line="138" selection-start-column="74" selection-end-line="138" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/polls/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="38" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/material/templates/material/list_documents.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+            <state relative-caret-position="493">
+              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -126,11 +95,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/polls/templates/admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2363">
+              <caret line="139" selection-start-line="139" selection-end-line="139" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/material/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="360" column="23" selection-start-line="360" selection-start-column="23" selection-end-line="360" selection-end-column="23" />
+            <state relative-caret-position="-1811">
+              <caret line="87" column="45" selection-start-line="87" selection-start-column="45" selection-end-line="87" selection-end-column="45" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -138,11 +116,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/material/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/users/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="165" column="34" selection-start-line="165" selection-start-column="34" selection-end-line="165" selection-end-column="34" />
+            <state relative-caret-position="104">
+              <caret line="147" selection-start-line="147" selection-end-line="147" />
               <folding>
                 <element signature="e#790#826#0" expanded="true" />
               </folding>
@@ -151,10 +138,41 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../pypro/users/views.py">
+        <entry file="file://$PROJECT_DIR$/docemas/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-474" />
+            <state relative-caret-position="189">
+              <caret line="146" selection-start-line="146" selection-end-line="146" />
+            </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/material/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docemas/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="59">
+              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+              <folding>
+                <element signature="e#631#663#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../pypro/users/views.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -197,9 +215,7 @@
         <option value="$PROJECT_DIR$/foro/forms.py" />
         <option value="$PROJECT_DIR$/foro/admin.py" />
         <option value="$PROJECT_DIR$/material/admin.py" />
-        <option value="$PROJECT_DIR$/material/models.py" />
         <option value="$PROJECT_DIR$/foro/migrations/0002_rehilo.py" />
-        <option value="$PROJECT_DIR$/docemas/settings.py" />
         <option value="$PROJECT_DIR$/docemas/templates/base.html" />
         <option value="$PROJECT_DIR$/material/templates/material/add_documento.html" />
         <option value="$PROJECT_DIR$/material/templates/material/edit_documento.html" />
@@ -207,7 +223,6 @@
         <option value="$PROJECT_DIR$/users/templates/users/new_user.html" />
         <option value="$PROJECT_DIR$/users/forms.py" />
         <option value="$PROJECT_DIR$/users/templates/users/login.html" />
-        <option value="$PROJECT_DIR$/material/forms.py" />
         <option value="$PROJECT_DIR$/material/templates/material/upload_doc.html" />
         <option value="$PROJECT_DIR$/foro/templates/foro/hilo.html" />
         <option value="$PROJECT_DIR$/foro/templates/foro/add_hilo.html" />
@@ -215,14 +230,17 @@
         <option value="$PROJECT_DIR$/users/templates/users/update_user.html" />
         <option value="$PROJECT_DIR$/users/templates/users/users_loop.html" />
         <option value="$PROJECT_DIR$/users/templates/users/list_users.html" />
-        <option value="$PROJECT_DIR$/polls/templates/admin.html" />
         <option value="$PROJECT_DIR$/polls/templates/polls/nav_adm.html" />
         <option value="$PROJECT_DIR$/polls/templates/mant_otec.html" />
         <option value="$PROJECT_DIR$/material/templates/material/list_documents.html" />
         <option value="$PROJECT_DIR$/foro/views.py" />
-        <option value="$PROJECT_DIR$/docemas/urls.py" />
-        <option value="$PROJECT_DIR$/material/views.py" />
         <option value="$PROJECT_DIR$/users/views.py" />
+        <option value="$PROJECT_DIR$/docemas/settings.py" />
+        <option value="$PROJECT_DIR$/material/models.py" />
+        <option value="$PROJECT_DIR$/material/views.py" />
+        <option value="$PROJECT_DIR$/material/forms.py" />
+        <option value="$PROJECT_DIR$/docemas/urls.py" />
+        <option value="$PROJECT_DIR$/polls/templates/admin.html" />
       </list>
     </option>
   </component>
@@ -239,66 +257,29 @@
         <subPane>
           <expand>
             <path>
-              <item name="DoceMasYoyo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DoceMasYoyo" type="462c0819:PsiDirectoryNode" />
+              <item name="DoceMasControl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DoceMasControl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DoceMasYoyo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DoceMasYoyo" type="462c0819:PsiDirectoryNode" />
+              <item name="DoceMasControl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DoceMasControl" type="462c0819:PsiDirectoryNode" />
               <item name="docemas" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DoceMasYoyo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DoceMasYoyo" type="462c0819:PsiDirectoryNode" />
-              <item name="docemas" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DoceMasYoyo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DoceMasYoyo" type="462c0819:PsiDirectoryNode" />
+              <item name="DoceMasControl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DoceMasControl" type="462c0819:PsiDirectoryNode" />
               <item name="material" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DoceMasYoyo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DoceMasYoyo" type="462c0819:PsiDirectoryNode" />
-              <item name="material" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DoceMasYoyo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DoceMasYoyo" type="462c0819:PsiDirectoryNode" />
+              <item name="DoceMasControl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DoceMasControl" type="462c0819:PsiDirectoryNode" />
               <item name="polls" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DoceMasYoyo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DoceMasYoyo" type="462c0819:PsiDirectoryNode" />
+              <item name="DoceMasControl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DoceMasControl" type="462c0819:PsiDirectoryNode" />
               <item name="polls" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DoceMasYoyo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DoceMasYoyo" type="462c0819:PsiDirectoryNode" />
-              <item name="polls" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="polls" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DoceMasYoyo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DoceMasYoyo" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DoceMasYoyo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DoceMasYoyo" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DoceMasYoyo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DoceMasYoyo" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -314,7 +295,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/Edit As Language" value="SQLite" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docemas/settings.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DoceMasYoyo" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -400,11 +381,12 @@
       <workItem from="1560576330631" duration="407000" />
       <workItem from="1560639888178" duration="32064000" />
       <workItem from="1560862820135" duration="1410000" />
+      <workItem from="1560952107507" duration="1548000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48373000" />
+    <option name="totallyTimeSpent" value="49921000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -416,10 +398,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20801815" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21104388" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -638,27 +620,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docemas/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/material/templates/material/add_documento.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/material/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -703,13 +668,6 @@
           <folding>
             <element signature="e#24#48#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/material/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
@@ -786,21 +744,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docemas/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="56" column="55" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
-          <folding>
-            <element signature="e#631#663#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/polls/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../pypro/photos/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1953">
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -822,17 +779,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/polls/templates/admin.html">
+    <entry file="file://$PROJECT_DIR$/polls/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2346">
-          <caret line="138" column="74" selection-start-line="138" selection-start-column="74" selection-end-line="138" selection-end-column="74" />
+        <state relative-caret-position="51">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/material/templates/material/list_documents.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+        <state relative-caret-position="493">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -846,47 +806,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../pypro/photos/views.py">
+    <entry file="file://$PROJECT_DIR$/../pypro/users/views.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1953">
+        <state relative-caret-position="104">
+          <caret line="147" selection-start-line="147" selection-end-line="147" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#790#826#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../pypro/users/views.py">
+    <entry file="file://$PROJECT_DIR$/docemas/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-474" />
+        <state relative-caret-position="189">
+          <caret line="146" selection-start-line="146" selection-end-line="146" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/polls/urls.py">
+    <entry file="file://$PROJECT_DIR$/material/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="38" />
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/material/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docemas/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding>
+            <element signature="e#631#663#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/material/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="360" column="23" selection-start-line="360" selection-start-column="23" selection-end-line="360" selection-end-column="23" />
+        <state relative-caret-position="-1811">
+          <caret line="87" column="45" selection-start-line="87" selection-start-column="45" selection-end-line="87" selection-end-column="45" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users/views.py">
+    <entry file="file://$PROJECT_DIR$/polls/templates/admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="165" column="34" selection-start-line="165" selection-start-column="34" selection-end-line="165" selection-end-column="34" />
-          <folding>
-            <element signature="e#790#826#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2363">
+          <caret line="139" selection-start-line="139" selection-end-line="139" />
         </state>
       </provider>
     </entry>

@@ -5,13 +5,12 @@ from polls.models import Asignatura
 from polls.models import Nivel
 from django.db.models.fields.files import forms
 
-from material.validators import valid_extension
 
 # Create your models here.
 
 class TypeDocument(models.Model):
     titulo = models.CharField(max_length=50,blank=True)
-    descripcion = models.CharField(max_length=50,blank=True)
+    descripcion = models.CharField(max_length=500,blank=True)
     
     def __str__(self):
         return self.titulo
@@ -24,11 +23,7 @@ class Document(models.Model):
     title = models.CharField(max_length=50,blank=True)
     descripcion = models.CharField(max_length=500,blank=True)
     fecha = models.DateTimeField(auto_now_add=True)
-<<<<<<< HEAD
-    archivo = models.FileField(upload_to='material/', validators=[valid_extension])
-=======
     archivo = models.FileField(upload_to='documents/')
->>>>>>> origin/yoyo
     estado = models.BooleanField(default=True)
     visibility = models.CharField(max_length=3,choices=VISIBILITY, default=PUBLIC)
     

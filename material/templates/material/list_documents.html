@@ -27,21 +27,13 @@
                         <tbody>
                             <tr>
                                 <td class="action no-border">
-<<<<<<< HEAD
-                                    <a class="update btn btn-color pull-left" href="{% url 'create_document' %}" > Agregar Material</a>
-=======
                                     <a class="update btn btn-color pull-left" href="{% url 'upload_doc' %}" > Agregar Material</a>
->>>>>>> origin/yoyo
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-<<<<<<< HEAD
-                    <div class="table-box">
-=======
                     <!--table-box  table-responsive-->
                     <div class="table-responsive">
->>>>>>> origin/yoyo
                         <!-- shopping-cart-table -->
                         <table class="shopping-cart-table responsive-table table table-bordered table-striped" id="shopping-cart-table">
                             <thead>
@@ -54,35 +46,20 @@
                                     <th>Nivel</th>
                                     <th>Asignatura</th>
                                     <th>Tipo Documento</th>
-<<<<<<< HEAD
-=======
                                     <th>Documento</th>
->>>>>>> origin/yoyo
                                     <th>Editar</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for doc in documents_list %}
                                     <tr id="datos">
-<<<<<<< HEAD
-                                        <td>{{doc.titulo}}</td>    
-=======
                                         <td>{{doc.title}}</td>
->>>>>>> origin/yoyo
                                         <td>{{doc.descripcion}}</td>    
                                         <td>{{doc.fecha}}</td>    
                                         <td>{{doc.estado}}</td>    
                                         <td>{{doc.visibility}}</td>    
                                         <td>{{doc.nivel.nombre}}</td>    
                                         <td>{{doc.asignatura.nombre}}</td>    
-<<<<<<< HEAD
-                                        <td>{{doc.typeDocument.titulo}}</td>    
-                                        <td>
-                                            <!--<a href="{% url 'edit_type' pk=type.pk %}" ><i class="fa fa-pencil"></i> Editar</a>-->
-                                            <a href="{% url 'edit_document' pk=doc.pk %}" ><i class="fa fa-pencil"></i> Editar</a>
-                                        </td>    
-                                    </tr>
-=======
                                         <td>{{doc.typeDocument.titulo}}</td>  
                                         <td><a href="{{ doc.archivo.url }}">{{ doc.title }}</a></td>
                                         <td>
@@ -91,7 +68,6 @@
                                         </td>    
                                     </tr>
                                     <!--<a href="{{ doc.archivo.url }}">Archivo {{ doc.title }}</a>-->
->>>>>>> origin/yoyo
                                 {% endfor %}
                             </tbody>
                         </table>
@@ -102,11 +78,5 @@
         </div>
     </div>
     <!-- /Main Content -->
-<<<<<<< HEAD
-
-    
-    
-=======
->>>>>>> origin/yoyo
 {% endblock %}
 

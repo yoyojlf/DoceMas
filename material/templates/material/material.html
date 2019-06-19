@@ -37,22 +37,6 @@
                     })
                 }
             });
-<<<<<<< HEAD
-        })
-        
-    });
-    //Fin Add Material
-
-    //Edit Material
-    $("#btn_edit").on("click",function () {
-        str = $('#form_edit').serialize();
-        $.ajax({
-            type: "POST",
-            url: "/type/" + '{{id}}',
-            data: str,
-            success: function(data) {
-                if(data.type == 'error'){
-=======
         })    
         //Fin Add Material
 
@@ -85,43 +69,15 @@
                     }  
                 },
                 error: function(data) {
->>>>>>> origin/yoyo
                     swal({
                         title: data.tittle,
                         text: data.mensaje,
                         type: data.type,
                         confirmButtonText: 'Aceptar'
                     })
-<<<<<<< HEAD
-                }else {
-                    swal({
-                        title: data.tittle,
-                        text: data.mensaje,
-                        type: data.type,
-                        confirmButtonText: 'Aceptar'
-                    }).then((result) => {
-                            if (result.value) {
-                                window.location.href = '/docum/all';
-                            }
-                        })
-                }  
-            },
-            error: function(data) {
-                swal({
-                    title: data.tittle,
-                    text: data.mensaje,
-                    type: data.type,
-                    confirmButtonText: 'Aceptar'
-                })
-            }
-        });
-    })
-    //Fin Edit Material
-=======
                 }
             });
         })
         //Fin Edit Material
     });
->>>>>>> origin/yoyo
 </script>

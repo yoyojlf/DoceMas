@@ -2,11 +2,7 @@
 
 
 {%block section %}
-<<<<<<< HEAD
-
-=======
 {% load crispy_forms_tags %}
->>>>>>> origin/yoyo
 <!-- Title, Breadcrumb -->
 <div class="breadcrumb-wrapper">
     <div class="pattern-overlay">
@@ -29,11 +25,7 @@
     
     {% if success_message %}
         {{success_message}}
-<<<<<<< HEAD
-    {% else %}
-=======
     {% endif %}
->>>>>>> origin/yoyo
 
     <div class="container">
         <form id="form_edit"  method="post" enctype="multipart/form-data">
@@ -54,19 +46,12 @@
             <div class="row">
                 <div class="form-group">
                     <div class="col-md-6">
-<<<<<<< HEAD
-                        {{ form.titulo|as_crispy_field }}               
-=======
                         {{ form.title|as_crispy_field }}
->>>>>>> origin/yoyo
                     </div>
                     <div class="col-md-6">
                         {{ form.descripcion|as_crispy_field }}               
                     </div>
-<<<<<<< HEAD
-=======
                 </div>
->>>>>>> origin/yoyo
             </div>
             <div class="row">
                 <div class="form-group">
@@ -81,25 +66,15 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-        <div>
-            <input type="button" id="btn_edit" class="btn btn-color" value="Editar">
-        </div>
-=======
             <div>
             <input type="button" id="btn_edit" class="btn btn-color" value="Editar">
             </div>
->>>>>>> origin/yoyo
         </form>
     </div>
 
     <br><br>
     
-<<<<<<< HEAD
-    {% endif%}
-=======
 
->>>>>>> origin/yoyo
 
     {% block scripts %}
         
